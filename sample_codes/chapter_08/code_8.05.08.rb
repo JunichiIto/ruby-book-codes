@@ -41,3 +41,8 @@ class User
     @name = name
   end
 end
+
+# Userクラスの使い方は先ほどと同じ
+user = User.new('alice')
+user.change_name
+user.name #=> "ありす"

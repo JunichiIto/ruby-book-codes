@@ -31,9 +31,3 @@ class ConvertLengthTest < Minitest::Test
     assert_equal 10670.73, convert_length(35000, 'ft', 'm')
   end
 end
-
-# ----------------------------------------
-
-$ ruby test/convert_length_test.rb
-# 省略
-1 runs, 3 assertions, 0 failures, 0 errors, 0 skips

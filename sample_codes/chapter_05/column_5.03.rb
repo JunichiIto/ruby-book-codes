@@ -1,17 +1,26 @@
-# コラム：よく使われるイディオム 2. ||=を使った自己代入
+# コラム：よく使われるイディオム 3. !!を使った真偽値の型変換
 
-limit ||= 10
+def user_exists?
+  # データベース等からユーザーを探す（なければnil）
+  user = find_user
+  if user
+    # userが見つかったのでtrue
+    true
+  else
+    # userが見つからないのでfalse
+    false
+  end
+end
 
 # ----------------------------------------
 
-limit = nil
-limit ||= 10
-limit #=> 10
-
-limit = 20
-limit ||= 10
-limit #=> 20
+def user_exists?
+  !!find_user
+end
 
 # ----------------------------------------
 
-limit = limit || 10
+!!true  #=> true
+!!1     #=> true
+!!false #=> false
+!!nil   #=> false

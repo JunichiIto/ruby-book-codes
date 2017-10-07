@@ -68,3 +68,8 @@ end
 # Userクラスのnameメソッドを上書きすることができた！
 user = User.new
 user.name #=> "<<Alice>>"
+
+# ----------------------------------------
+
+Product.prepend NameDecorator
+User.prepend NameDecorator

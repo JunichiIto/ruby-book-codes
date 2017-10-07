@@ -1,5 +1,6 @@
 class EffectsTest < Minitest::Test
   # 省略
+
   def test_echo
     effect = Effects.echo(2)
     assert_equal 'RRuubbyy iiss ffuunn!!', effect.call('Ruby is fun!')

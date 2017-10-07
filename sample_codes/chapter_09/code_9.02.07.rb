@@ -1,30 +1,64 @@
+# 間違った例外処理の例
 begin
-  # 例外が発生するかもしれない処理
-rescue
-  retry # 処理をやり直す
+  # NoMethodErrorを発生させる
+  'abc'.foo
+rescue NameError
+  # NoMethodErrorはここで捕捉される
+  puts 'NameErrorです'
+rescue NoMethodError
+  # このrescue節は永遠に実行されない
+  puts 'NoMethodErrorです'
 end
+#=> NameErrorです
 
 # ----------------------------------------
 
-retry_count = 0
 begin
-  puts '処理を開始します。'
-  # わざと例外を発生させる
-  1 / 0
-rescue
-  retry_count += 1
-  if retry_count <= 3
-    puts "retryします。（#{retry_count}回目）"
-    retry
-  else
-    puts 'retryに失敗しました。'
-  end
+  'abc'.foo
+rescue NoMethodError
+  # NoMethodErrorはここで捕捉される
+  puts 'NoMethodErrorです'
+rescue NameError
+  puts 'NameErrorです'
 end
-#=> 処理を開始します。
-#   retryします。（1回目）
-#   処理を開始します。
-#   retryします。（2回目）
-#   処理を開始します。
-#   retryします。（3回目）
-#   処理を開始します。
-#   retryに失敗しました。
+#=> NoMethodErrorです
+
+# ----------------------------------------
+
+begin
+  # NameErrorを発生させる
+  Foo.new
+rescue NoMethodError
+  puts 'NoMethodErrorです'
+rescue NameError
+  puts 'NameErrorです'
+end
+#=> NameErrorです
+
+# ----------------------------------------
+
+begin
+  # ZeroDivisionErrorを発生させる
+  1 / 0
+rescue NoMethodError
+  puts 'NoMethodErrorです'
+rescue NameError
+  puts 'NameErrorです'
+rescue StandardError
+  puts 'その他のエラーです'
+end
+#=> その他のエラーです
+
+# ----------------------------------------
+
+begin
+  # ZeroDivisionErrorを発生させる
+  1 / 0
+rescue NoMethodError
+  puts 'NoMethodErrorです'
+rescue NameError
+  puts 'NameErrorです'
+rescue
+  puts 'その他のエラーです'
+end
+#=> その他のエラーです

@@ -1,14 +1,47 @@
 begin
-  # 例外が起きそうな処理
-rescue
-  # StandardErrorとそのサブクラスのみ捕捉される
+  1 / 0
+rescue ZeroDivisionError
+  puts "0で除算しました"
 end
+#=> 0で除算しました
 
 # ----------------------------------------
 
-# 例外処理の悪い例
 begin
-  # 例外が起きそうな処理
-rescue Exception
-  # Exceptionとそのサブクラスが捕捉される。つまり、SystemExitやNoMemoryErrorまで捕捉されてしまう
+  # NoMethodErrorを発生させる
+  'abc'.foo
+rescue ZeroDivisionError
+  puts "0で除算しました"
 end
+#=> NoMethodError: undefined method `foo' for "abc":String
+
+# ----------------------------------------
+
+begin
+  'abc'.foo
+rescue ZeroDivisionError
+  puts "0で除算しました"
+rescue NoMethodError
+  puts "存在しないメソッドが呼び出されました"
+end
+#=> 存在しないメソッドが呼び出されました
+
+# ----------------------------------------
+
+begin
+  'abc'.foo
+rescue ZeroDivisionError, NoMethodError
+  puts "0で除算したか、存在しないメソッドが呼び出されました"
+end
+#=> 0で除算したか、存在しないメソッドが呼び出されました
+
+# ----------------------------------------
+
+begin
+  'abc'.foo
+rescue ZeroDivisionError, NoMethodError => e
+  puts "0で除算したか、存在しないメソッドが呼び出されました"
+  puts "エラー: #{e.class} #{e.message}"
+end
+#=> 0で除算したか、存在しないメソッドが呼び出されました
+#   エラー: NoMethodError undefined method `foo' for "abc":String

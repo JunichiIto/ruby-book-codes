@@ -1,39 +1,41 @@
-numbers = [1, 2, 3, 4, 5]
-numbers.each do |n|
-  # 偶数であれば中断して次の繰り返し処理に進む
-  next if n.even?
-  puts n
+a = []
+while a.size < 5
+  a << 1
 end
-#=> 1
-#   3
-#   5
+a #=> [1, 1, 1, 1, 1]
 
 # ----------------------------------------
 
-numbers = [1, 2, 3, 4, 5]
-i = 0
-while i < numbers.size
-  n = numbers[i]
-  i += 1
-  # while文の中でnextを使う
-  next if n.even?
-  puts n
-end
-#=> 1
-#   3
-#   5
+a = []
+while a.size < 5 do a << 1 end
+a #=> [1, 1, 1, 1, 1]
 
-fruits = ['apple', 'melon', 'orange']
-numbers = [1, 2, 3, 4]
-fruits.each do |fruit|
-  numbers.each do |n|
-    next if n.even?
-    puts "#{fruit}, #{n}"
-  end
+# ----------------------------------------
+
+a = []
+a << 1 while a.size < 5
+a #=> [1, 1, 1, 1, 1]
+
+# ----------------------------------------
+
+a = []
+
+# 以下のコードは常に条件が偽になるので実行されない
+while false
+  a << 1
 end
-#=> apple, 1
-#   apple, 3
-#   melon, 1
-#   melon, 3
-#   orange, 1
-#   orange, 3
+a #=> []
+
+# begin ... endで囲むとどんな条件でも最低1回は実行される
+begin
+  a << 1
+end while false
+a #=> [1]
+
+# ----------------------------------------
+
+a = [1, 2, 3, 4, 5]
+until a.size <= 3
+  a.delete_at(-1)
+end
+a #=> [1, 2, 3]

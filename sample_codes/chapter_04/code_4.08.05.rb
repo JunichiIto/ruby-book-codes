@@ -1,17 +1,25 @@
-numbers = [1, 2, 3, 4]
-sum = 0
-# ブロックの外にあるsumとは別物の変数sumを用意する
-numbers.each do |n; sum|
-  # 別物のsumを10で初期化し、ブロック引数の値を加算する
-  sum = 10
-  sum += n
-  # 加算した値をターミナルに表示する
-  p sum
-end
-#=> 11
-#   12
-#   13
-#   14
+# []で文字列の配列を作成する
+['apple', 'melon', 'orange'] #=> ["apple", "melon", "orange"]
 
-# ブロックの中で使っていたsumは別物なので、ブロックの外にsumには変化がない
-sum #=> 0
+# %wで文字列の配列を作成する（!で囲む場合）
+%w!apple melon orange!       #=> ["apple", "melon", "orange"]
+
+# %wで文字列の配列を作成する（丸カッコで囲む場合）
+%w(apple melon orange)       #=> ["apple", "melon", "orange"]
+
+# 空白文字（スペースや改行）が連続した場合もひとつの区切り文字と見なされる
+%w(
+  apple
+  melon
+  orange
+)
+#=> ["apple", "melon", "orange"]
+
+# ----------------------------------------
+
+%w(big\ apple small\ melon orange) #=> ["big apple", "small melon", "orange"]
+
+# ----------------------------------------
+
+prefix = 'This is'
+%W(#{prefix}\ an\ apple small\nmelon orange) #=> ["This is an apple", "small\nmelon", "orange"]

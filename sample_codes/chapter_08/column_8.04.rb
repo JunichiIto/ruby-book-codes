@@ -1,34 +1,16 @@
-# コラム：二重コロン（`::`）とドット（`.`）の違い
+# コラム：モジュールの用途はひとつとは限らない
 
-module Sample
-  class User
-    NAME = 'Alice'
+# AwesomeApiモジュールは設定値を保持する（用途その１）
+module AwesomeApi
+  @base_url = ''
+  @debug_mode = false
 
-    def self.hello(name = NAME)
-      "Hello, I am #{name}."
-    end
+  class << self
+    attr_accessor :base_url, :debug_mode
   end
 end
 
-# ----------------------------------------
-
-Sample::User::NAME #=> "Alice"
-
-Sample::User.hello #=> "Hello, I am Alice."
-
-# ----------------------------------------
-
-Sample::User::hello #=> "Hello, I am Alice."
-
-# ----------------------------------------
-
-s = 'abc'
-s::upcase #=> "ABC"
-
-# ----------------------------------------
-
-# Sample.UserだとUserがメソッドと見なされる
-Sample.User::NAME #=> NoMethodError: undefined method `User' for Sample:Module
-
-# User.NAMEだとNAMEがメソッドと見なされる
-Sample::User.NAME #=> NoMethodError: undefined method `NAME' for Sample::User:Class
+# こちらではAwesomeApiモジュールが名前空間として使われる（用途その２）
+class AwesomeApi::Engine
+  # クラスの定義
+end

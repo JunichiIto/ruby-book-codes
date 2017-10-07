@@ -1,13 +1,11 @@
-開始値.step(上限値, 1度に増減する大きさ)
+fruits = ['apple', 'orange', 'melon']
 
-# ----------------------------------------
+# eachで繰り返しつつ、1から始まる添え字を取得する
+fruits.each.with_index(1) { |fruit, i| puts "#{i}: #{fruit}" }
+#=> 1: apple
+#   2: orange
+#   3: melon
 
-a = []
-1.step(10, 2) { |n| a << n }
-a #=> [1, 3, 5, 7, 9]
-
-# ----------------------------------------
-
-a = []
-10.step(1, -2) { |n| a << n }
-a #=> [10, 8, 6, 4, 2]
+# mapで処理しつつ、10から始まる添え字を取得する
+fruits.map.with_index(10) { |fruit, i| "#{i}: #{fruit}" }
+#=> ["10: apple", "11: orange", "12: melon"]

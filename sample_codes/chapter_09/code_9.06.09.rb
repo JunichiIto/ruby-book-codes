@@ -24,9 +24,9 @@ class NoCountryError < StandardError
   # 国名を属性として取得できるようにする
   attr_reader :country
 
-  def initialize(country)
+  def initialize(message, country)
     @country = country
-    super("無効な国名です。")
+    super("#{message} #{country}")
   end
 end
 
@@ -39,7 +39,8 @@ def currency_of(country)
   when :india
     'rupee'
   else
-    raise NoCountryError, country
+    # NoCountryErrorを発生させる
+    raise NoCountryError.new('無効な国名です。', country)
   end
 end
 
@@ -47,18 +48,8 @@ begin
   currency_of(:italy)
 rescue NoCountryError => e
   # エラーメッセージと国名を出力する
-  puts "#{e.message} #{e.country}"
+  puts e.message
+  puts e.country
 end
 #=> 無効な国名です。 italy
-
-# ----------------------------------------
-
-class NoCountryError < StandardError
-  def initialize(country, other_info)
-    super("無効な国名です。#{country} / #{other_info}")
-  end
-end
-
-# 例外のnewメソッドが2つの引数を必要とする場合
-raise NoCountryError.new(:italy, 'This is test.')
-#=> NoCountryError: 無効な国名です。italy / This is test.
+#   italy

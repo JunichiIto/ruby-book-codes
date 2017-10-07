@@ -5,7 +5,7 @@ end
 User.class #=> Class
 
 # ClassクラスのスーパークラスはModuleクラス
-User.class.superclass #=> Module
+Class.superclass #=> Module
 
 module Loggable
 end
@@ -14,7 +14,7 @@ end
 Loggable.class #=> Module
 
 # ModuleクラスのスーパークラスはObjectクラス
-Loggable.class.superclass #=> Object
+Module.superclass #=> Object
 
 # ----------------------------------------
 

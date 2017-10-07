@@ -1,19 +1,6 @@
-fruits = ['apple', 'orange', 'melon']
-# mapとして処理しつつ、添え字も受け取る
-fruits.map.with_index { |fruit, i| "#{i}: #{fruit}" }
-#=> ["0: apple", "1: orange", "2: melon"]
-
-# ----------------------------------------
-
-fruits = ['apple', 'orange', 'melon']
-# 名前に"a"を含み、なおかつ添え字が奇数である要素を削除する
-fruits.delete_if.with_index { |fruit, i| fruit.include?('a') && i.odd? }
-#=> ["apple", "melon"]
-
-# ----------------------------------------
-
-fruits = ['apple', 'orange', 'melon']
-# ブロック無しでメソッドを呼び出すとEnumeratorオブジェクトが返される
-fruits.each      #=> #<Enumerator: ["apple", "orange", "melon"]:each>
-fruits.map       #=> #<Enumerator: ["apple", "orange", "melon"]:map>
-fruits.delete_if #=> #<Enumerator: ["apple", "orange", "melon"]:delete_if>
+def greeting(*names)
+  "#{names.join('と')}、こんにちは！"
+end
+greeting('田中さん')                       #=> "田中さん、こんにちは！"
+greeting('田中さん', '鈴木さん')            #=> "田中さんと鈴木さん、こんにちは！"
+greeting('田中さん', '鈴木さん', '佐藤さん') #=> "田中さんと鈴木さんと佐藤さん、こんにちは！"

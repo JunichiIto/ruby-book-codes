@@ -15,7 +15,7 @@ puts `cat lib/fizz_buzz.rb`
 
 # ----------------------------------------
 
-puts `type lib￥￥fizz_buzz.rb`
+puts `type lib\\fizz_buzz.rb`
 
 # ----------------------------------------
 

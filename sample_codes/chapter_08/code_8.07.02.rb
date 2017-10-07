@@ -29,6 +29,12 @@ product.title
 
 # ----------------------------------------
 
+product = Product.new
+# logメソッドはprivateなので外部からは呼び出せない
+product.log 'Hello.' #=> NoMethodError: private method `log' called for #<Product:0x007ffe8b88fb30>
+
+# ----------------------------------------
+
 module Loggable
   # ここから下のメソッドはすべてモジュール関数
   module_function
@@ -37,9 +43,3 @@ module Loggable
     puts "[LOG] #{text}"
   end
 end
-
-# ----------------------------------------
-
-product = Product.new
-# logメソッドはprivateなので外部からは呼び出せない
-product.log 'Hello.' #=> NoMethodError: private method `log' called for #<Product:0x007ffe8b88fb30>

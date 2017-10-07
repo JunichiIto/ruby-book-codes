@@ -25,14 +25,3 @@ module Taggable
     "#{self.price}円"
   end
 end
-
-# ----------------------------------------
-
-class User
-  include Taggable
-
-  # Userクラスにはpriceメソッドは定義されていない
-end
-
-user = User.new
-user.price_tag #=> NameError: undefined local variable or method `price' for #<User:0x007fd3cb84b970>

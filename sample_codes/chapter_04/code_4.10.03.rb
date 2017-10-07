@@ -1,47 +1,13 @@
-def greeting(country)
-  # countryがnilならメッセージを返してメソッドを抜ける
-  return 'countryを入力してください' if country.nil?
-
-  if country == 'japan'
-    'こんにちは'
-  else
-    'hello'
-  end
-end
+開始値.step(上限値, 1度に増減する大きさ)
 
 # ----------------------------------------
 
-def calc_with_break
-  numbers = [1, 2, 3, 4, 5, 6]
-  target = nil
-  numbers.shuffle.each do |n|
-    target = n
-    # breakで脱出する
-    break if n.even?
-  end
-  target * 10
-end
-calc_with_break #=> 40
+a = []
+1.step(10, 2) { |n| a << n }
+a #=> [1, 3, 5, 7, 9]
 
 # ----------------------------------------
 
-def calc_with_return
-  numbers = [1, 2, 3, 4, 5, 6]
-  target = nil
-  numbers.shuffle.each do |n|
-    target = n
-    # returnで脱出する？
-    return if n.even?
-  end
-  target * 10
-end
-calc_with_return #=> nil
-
-# ----------------------------------------
-
-[1, 2, 3].each do |n|
-  puts n
-  return
-end
-#=> 1
-#   LocalJumpError: unexpected return
+a = []
+10.step(1, -2) { |n| a << n }
+a #=> [10, 8, 6, 4, 2]

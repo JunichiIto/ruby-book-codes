@@ -1,21 +1,9 @@
-# コラム：メソッドの有無を調べる`respond_to?`
+# コラム：クラスの可視性について
 
-s = 'Alice'
-
-# Stringクラスはsplitメソッドを持つ
-s.respond_to?(:split) #=> true
-
-# nameメソッドは持たない
-s.respond_to?(:name) #=> false
-
-# ----------------------------------------
-
-def display_name(object)
-  if object.respond_to?(:name)
-    # nameメソッドが呼び出せる場合
-    puts "Name is <<#{object.name}>>"
-  else
-    # nameメソッドが呼び出せない場合
-    puts "No name."
+class User
+  # このようなクラス定義はエラーになる
+  private class BloodType
+    # 省略
   end
 end
+#=> TypeError: nil is not a symbol nor a string

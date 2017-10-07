@@ -1,41 +1,50 @@
-class Product
-  # デフォルトの価格を定数として宣言する
-  DEFAULT_PRICE = 0
-
-  attr_reader :name, :price
-
-  def initialize(name, price = DEFAULT_PRICE)
+class User
+  def initialize(name)
     @name = name
-    @price = price
+  end
+
+  # これはインスタンスメソッド
+  def hello
+    # @nameの値はインスタンスによって異なる
+    "Hello, I am #{@name}."
   end
 end
+alice = User.new('Alice')
+# インスタンスメソッドはインスタンス（オブジェクト）に対して呼び出す
+alice.hello #=> "Hello, I am Alice."
 
-product = Product.new('A free movie')
-product.price #=> 0
+bob = User.new('Bob')
+# インスタンスによって内部のデータが異なるので、helloメソッドの結果も異なる
+bob.hello   #=> "Hello, I am Bob."
 
 # ----------------------------------------
 
-# 定数名の例
-DEFAULT_PRICE = 0
-UNITS = { m: 1.0, ft: 3.28, in: 39.37 }
-
-# ----------------------------------------
-
-class Product
-  DEFAULT_PRICE = 0
-
-  def self.default_price
-    # クラスメソッドから定数を参照する
-    DEFAULT_PRICE
+class User
+  def initialize(name)
+    @name = name
   end
 
-  def default_price
-    # インスタンスメソッドから定数を参照する
-    DEFAULT_PRICE
+  # self.を付けるとクラスメソッドになる
+  def self.create_users(names)
+    # mapメソッドを忘れた人は第4章を参照
+    names.map do |name|
+      User.new(name)
+    end
+  end
+
+  # これはインスタンスメソッド
+  def hello
+    "Hello, I am #{@name}."
   end
 end
 
-Product.default_price #=> 0
-
-product = Product.new
-product.default_price #=> 0
+names = ['Alice', 'Bob', 'Carol']
+# クラスメソッドの呼び出し
+users = User.create_users(names)
+users.each do |user|
+  # インスタンスメソッドの呼び出し
+  puts user.hello
+end
+#=> Hello, I am Alice.
+#   Hello, I am Bob.
+#   Hello, I am Carol.

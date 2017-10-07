@@ -29,7 +29,7 @@ end
 
 require 'minitest/autorun'
 require './lib/gate'
-require './lib/ticket' # <= 追加
+require './lib/ticket'
 
 class GateTest < Minitest::Test
   # 省略

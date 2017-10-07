@@ -29,7 +29,7 @@ end
 # ----------------------------------------
 
 require 'minitest/autorun'
-require './lib/fizz_buzz' # <= 追加
+require './lib/fizz_buzz'
 
 class FizzBuzzTest < Minitest::Test
-# 省略
+  # 省略
