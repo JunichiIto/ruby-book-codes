@@ -1,5 +1,5 @@
-# コラム：ファイルエンコーディングとマジックコメント
 # encoding: utf-8
+# コラム：ファイルエンコーディングとマジックコメント
 
 puts 1 + 2
 
@@ -8,8 +8,3 @@ puts a
 
 b = 'こんにちは'
 puts b
-
-
-# encoding: shift_jis
-
-puts 'このファイルはShift_JISで保存されています。'
