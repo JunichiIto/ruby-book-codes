@@ -1,9 +1,11 @@
 # 空のハッシュを作成し、そのクラス名を確認する
 {}.class #=> Hash
 
+# ----------------------------------------
 
 { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
 
+# ----------------------------------------
 
 {
   'japan' => 'yen',
@@ -11,6 +13,7 @@
   'india' => 'rupee'
 }
 
+# ----------------------------------------
 
 {
   'japan' => 'yen',
@@ -18,12 +21,15 @@
   'india' => 'rupee',
 }
 
+# ----------------------------------------
 
 { 'japan' => 'yen', 'japan' => '円' } #=> {"japan"=>"円"}
 
+# ----------------------------------------
 
 ハッシュ[キー] = 値
 
+# ----------------------------------------
 
 currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
 
@@ -32,6 +38,7 @@ currencies['italy'] = 'euro'
 
 currencies #=> {"japan"=>"yen", "us"=>"dollar", "india"=>"rupee", "italy"=>"euro"}
 
+# ----------------------------------------
 
 currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
 
@@ -40,19 +47,23 @@ currencies['japan'] = '円'
 
 currencies #=> {"japan"=>"円", "us"=>"dollar", "india"=>"rupee"}
 
+# ----------------------------------------
 
 ハッシュ[キー]
 
+# ----------------------------------------
 
 currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
 
 currencies['india'] #=> 'rupee'
 
+# ----------------------------------------
 
 currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
 
 currencies['brazil'] #=> nil
 
+# ----------------------------------------
 
 currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
 
@@ -63,6 +74,7 @@ end
 #   us : dollar
 #   india : rupee
 
+# ----------------------------------------
 
 currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
 
@@ -75,6 +87,7 @@ end
 #   us : dollar
 #   india : rupee
 
+# ----------------------------------------
 
 a = { 'x' => 1, 'y' => 2, 'z' => 3 }
 
@@ -90,16 +103,19 @@ a == c #=> true
 d = { 'x' => 10, 'y' => 2, 'z' => 3 }
 a == d #=> false
 
+# ----------------------------------------
 
 {}.size #=> 0
 
 { 'x' => 1, 'y' => 2, 'z' => 3 }.size #=> 3
 
+# ----------------------------------------
 
 currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
 currencies.delete('japan') #=> "yen"
 currencies                 #=> {"us"=>"dollar", "india"=>"rupee"}
 
+# ----------------------------------------
 
 currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
 currencies.delete('italy')                               #=> nil

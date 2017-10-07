@@ -16,6 +16,7 @@ a << 2
 a       #=> [1, 2]
 a.class #=> MyArray
 
+# ----------------------------------------
 
 class String
   # 文字列をランダムにシャッフルする
@@ -28,6 +29,7 @@ s = 'Hello, I am Alice.'
 s.shuffle #=> "e l.iaIlAce lm,Ho "
 s.shuffle #=> " m,eeA cal Hil.Ilo"
 
+# ----------------------------------------
 
 # 文字列をキャメルケースからスネークケースに変換する
 'MyString'.underscore #=> "my_string"
@@ -37,6 +39,7 @@ numbers = [1, 2, 3]
 2.in?(numbers) #=> true
 5.in?(numbers) #=> false
 
+# ----------------------------------------
 
 # 以下のUserクラスは外部ライブラリで定義されている想定
 class User
@@ -63,6 +66,7 @@ end
 # メソッドの定義を上書きしたのでhelloメソッドの挙動が変わっている
 user.hello #=> "Aliceさん、こんにちは！"
 
+# ----------------------------------------
 
 # 以下のUserクラスは外部ライブラリで定義されている想定
 class User

@@ -4,6 +4,7 @@ module DeepFreezable
   end
 end
 
+# ----------------------------------------
 
 class Team
   extend DeepFreezable

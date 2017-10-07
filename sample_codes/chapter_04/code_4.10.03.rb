@@ -9,6 +9,7 @@ def greeting(country)
   end
 end
 
+# ----------------------------------------
 
 def calc_with_break
   numbers = [1, 2, 3, 4, 5, 6]
@@ -22,6 +23,7 @@ def calc_with_break
 end
 calc_with_break #=> 40
 
+# ----------------------------------------
 
 def calc_with_return
   numbers = [1, 2, 3, 4, 5, 6]
@@ -35,6 +37,7 @@ def calc_with_return
 end
 calc_with_return #=> nil
 
+# ----------------------------------------
 
 [1, 2, 3].each do |n|
   puts n

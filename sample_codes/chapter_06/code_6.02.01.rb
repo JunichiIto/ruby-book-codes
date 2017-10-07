@@ -6,6 +6,7 @@ TEXT
 
 text.scan(/[A-Z][A-Za-z]+/) #=> ["Ruby", "Python", "Java", "JavaScript"]
 
+# ----------------------------------------
 
 text = <<TEXT
 私の郵便番号は1234567です。

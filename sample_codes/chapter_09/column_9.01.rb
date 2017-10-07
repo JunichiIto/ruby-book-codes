@@ -1,4 +1,5 @@
 # コラム：ensure節ではreturnを使わない
+
 def some_method(n)
   begin
     1 / n
@@ -14,6 +15,7 @@ end
 some_method(1) #=> "ensure"
 some_method(0) #=> "ensure"
 
+# ----------------------------------------
 
 def some_method(n)
   begin

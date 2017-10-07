@@ -1,4 +1,5 @@
 # コラム：二重コロン（`::`）とドット（`.`）の違い
+
 module Sample
   class User
     NAME = 'Alice'
@@ -9,18 +10,22 @@ module Sample
   end
 end
 
+# ----------------------------------------
 
 Sample::User::NAME #=> "Alice"
 
 Sample::User.hello #=> "Hello, I am Alice."
 
+# ----------------------------------------
 
 Sample::User::hello #=> "Hello, I am Alice."
 
+# ----------------------------------------
 
 s = 'abc'
 s::upcase #=> "ABC"
 
+# ----------------------------------------
 
 # Sample.UserだとUserがメソッドと見なされる
 Sample.User::NAME #=> NoMethodError: undefined method `User' for Sample:Module

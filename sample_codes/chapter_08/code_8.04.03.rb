@@ -6,6 +6,7 @@ class Team
   COUNTRIES = deep_freeze(['Japan', 'US', 'India'])
 end
 
+# ----------------------------------------
 
 require './lib/deep_freezable'
 
@@ -15,6 +16,7 @@ class Bank
   CURRENCIES = deep_freeze({ 'Japan' => 'yen', 'US' => 'dollar', 'India' => 'rupee' })
 end
 
+# ----------------------------------------
 
 require 'minitest/autorun'
 require './lib/bank'
@@ -23,6 +25,7 @@ require './lib/team'
 class DeepFreezableTest < Minitest::Test
   # 省略
 
+# ----------------------------------------
 
 class DeepFreezableTest < Minitest::Test
   def test_deep_freeze_to_array
@@ -35,6 +38,7 @@ class DeepFreezableTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 module DeepFreezable
   def deep_freeze(array_or_hash)
@@ -47,6 +51,7 @@ module DeepFreezable
   end
 end
 
+# ----------------------------------------
 
 # freezeメソッドはレシーバ自身を返す
 [1, 2, 3].freeze #=> [1, 2, 3]

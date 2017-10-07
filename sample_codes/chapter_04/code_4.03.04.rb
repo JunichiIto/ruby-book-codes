@@ -4,6 +4,7 @@ numbers.each do |n|
   sum += n
 end
 
+# ----------------------------------------
 
 # ブロック引数の名前は何でもよい
 numbers.each do |i|
@@ -18,6 +19,7 @@ numbers.each do |element|
   sum += element
 end
 
+# ----------------------------------------
 
 numbers = [1, 2, 3, 4]
 sum = 0
@@ -27,6 +29,7 @@ numbers.each do |n|
 end
 sum #=> 64
 
+# ----------------------------------------
 
 numbers = [1, 2, 3, 4]
 sum = 0
@@ -39,6 +42,7 @@ end
 sum_value
 #=> NameError: undefined local variable or method `sum_value' for main:Object
 
+# ----------------------------------------
 
 numbers = [1, 2, 3, 4]
 sum = 0
@@ -48,6 +52,7 @@ numbers.each do |n|
   sum += sum_value
 end
 
+# ----------------------------------------
 
 numbers = [1, 2, 3, 4]
 sum = 0

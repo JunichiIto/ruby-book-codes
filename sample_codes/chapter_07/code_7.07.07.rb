@@ -8,6 +8,7 @@ class User
   end
 end
 
+# ----------------------------------------
 
 class User
   # 省略
@@ -18,6 +19,7 @@ class User
   end
 end
 
+# ----------------------------------------
 
 alice = User.new('Alice', 50)
 bob = User.new('Bob', 60)
@@ -25,6 +27,7 @@ bob = User.new('Bob', 60)
 alice.heavier_than?(bob)
 #=> NoMethodError: undefined method `weight' for #<User:0x007fbb2381c550 @name="Bob", @weight=60>
 
+# ----------------------------------------
 
 class User
   # 省略
@@ -50,6 +53,7 @@ bob.heavier_than?(alice) #=> true
 # クラスの外ではweightは呼び出せない
 alice.weight #=> NoMethodError: protected method `weight' called for #<User:0x007fbb24001ba8 @name="Alice", @weight=50>
 
+# ----------------------------------------
 
 class User
   # いったんpublicメソッドとしてweightを定義する

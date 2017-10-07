@@ -34,11 +34,13 @@ user.name #=> "Carol"
 user.rename_to_dave
 user.name #=> "Dave"
 
+# ----------------------------------------
 
 def rename_to_bob
   name = 'Bob'
 end
 
+# ----------------------------------------
 
 def rename_to_bob
   # メソッド内でセッターメソッドを呼び出す場合はselfを必ず付ける！！

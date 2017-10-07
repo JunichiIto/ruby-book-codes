@@ -27,6 +27,7 @@ product.title
 #=> [LOG] title is called.
 #   "A great movie"
 
+# ----------------------------------------
 
 module Loggable
   # ここから下のメソッドはすべてモジュール関数
@@ -37,6 +38,7 @@ module Loggable
   end
 end
 
+# ----------------------------------------
 
 product = Product.new
 # logメソッドはprivateなので外部からは呼び出せない

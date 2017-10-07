@@ -9,6 +9,7 @@ user = User.new
 # 変数に代入するような形式でname=メソッドを呼び出せる
 user.name = 'Alice'
 
+# ----------------------------------------
 
 class Product
   attr_reader :code, :name
@@ -19,6 +20,7 @@ class Product
   end
 end
 
+# ----------------------------------------
 
 # aとcが同じ商品コード
 a = Product.new('A-0001', 'A great movie')
@@ -29,6 +31,7 @@ c = Product.new('A-0001', 'A great movie')
 a == b #=> false
 a == c #=> true
 
+# ----------------------------------------
 
 # 何もしないと実際はこうなる
 a == b #=> false
@@ -37,6 +40,7 @@ a == c #=> false
 # デフォルトでは同じobject_id（全く同じインスタンス）の場合にtrueになる
 a == a #=> true
 
+# ----------------------------------------
 
 class Product
   # 省略
@@ -52,6 +56,7 @@ class Product
   end
 end
 
+# ----------------------------------------
 
 a = Product.new('A-0001', 'A great movie')
 b = Product.new('B-0001', 'An awesome film')
@@ -65,10 +70,12 @@ a == c #=> true
 a == 1   #=> false
 a == 'a' #=> false
 
+# ----------------------------------------
 
 a.==(b) #=> false
 a.==(c) #=> true
 
+# ----------------------------------------
 
 # 左辺にあるのが整数なので、Integerクラスの==が呼び出される
 1 == a #=> false

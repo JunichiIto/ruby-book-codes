@@ -18,6 +18,7 @@ puts fizz_buzz(5)
 puts fizz_buzz(6)
 puts fizz_buzz(15)
 
+# ----------------------------------------
 
 def fizz_buzz(n)
   if n % 15 == 0
@@ -36,6 +37,7 @@ end
 # 省略
 # puts fizz_buzz(15)
 
+# ----------------------------------------
 
 def fizz_buzz(n)
   if n % 15 == 0
@@ -64,6 +66,7 @@ end
 # 省略
 # puts fizz_buzz(15)
 
+# ----------------------------------------
 
 def fizz_buzz(n)
   if n % 15 == 0
@@ -91,10 +94,12 @@ class FizzBuzzTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 # 引数を15から16に変えてみる
 assert_equal 'Fizz Buzz', fizz_buzz(16)
 
+# ----------------------------------------
 
 # 正しい引数に戻す
 assert_equal 'Fizz Buzz', fizz_buzz(15)

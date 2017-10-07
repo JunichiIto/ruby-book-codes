@@ -11,6 +11,7 @@ rescue NoMethodError
 end
 #=> NameErrorです
 
+# ----------------------------------------
 
 begin
   'abc'.foo
@@ -22,6 +23,7 @@ rescue NameError
 end
 #=> NoMethodErrorです
 
+# ----------------------------------------
 
 begin
   # NameErrorを発生させる
@@ -33,6 +35,7 @@ rescue NameError
 end
 #=> NameErrorです
 
+# ----------------------------------------
 
 begin
   # ZeroDivisionErrorを発生させる
@@ -46,6 +49,7 @@ rescue StandardError
 end
 #=> その他のエラーです
 
+# ----------------------------------------
 
 begin
   # ZeroDivisionErrorを発生させる

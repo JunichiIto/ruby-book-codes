@@ -1,18 +1,18 @@
-# コラム：［］や＜＜を使った文字列の操作
-a = 'abcde'
-# 3文字目を取得する
-a[2]    #=> "c"
-# 2文字目から3文字ぶんを取得する
-a[1, 3] #=> "bcd"
-# 最後の1文字を取得する
-a[-1]   #=> "e"
+# コラム：繰り返し処理とEnummerableモジュール
 
-# 1文字目を"X"に置き換える
-a[0] = 'X'
-a #=> "Xbcde"
-# 2文字目から3文字ぶんを"Y"で置き換える
-a[1, 3] = 'Y'
-a #=> "XYe"
-# 末尾に"PQR"を連結する
-a << 'PQR'
-a #=> "XYePQR"
+# 範囲オブジェクトに対してmapメソッドを呼びだす
+(1..4).map { |n| n * 10 } #=> [10, 20, 30, 40]
+
+# uptoメソッドの戻り値に対してselectメソッドを呼び出す
+1.upto(5).select { |n| n.odd? } #=> [1, 3, 5]
+
+# ----------------------------------------
+
+[1, 2, 3].class                 #=> Array
+Array.include?(Enumerable)      #=> true
+
+(1..3).class                    #=> Range
+Range.include?(Enumerable)      #=> true
+
+1.upto(3).class                 #=> Enumerator
+Enumerator.include?(Enumerable) #=> true

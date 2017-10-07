@@ -1,6 +1,7 @@
 user = User.new
 user.class #=> User
 
+# ----------------------------------------
 
 user = User.new
 
@@ -10,6 +11,7 @@ user.instance_of?(User)   #=> true
 # userはStringクラスのインスタンスか？
 user.instance_of?(String) #=> false
 
+# ----------------------------------------
 
 user = User.new
 

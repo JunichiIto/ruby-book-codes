@@ -24,6 +24,7 @@ class << alice
   end
 end
 
+# ----------------------------------------
 
 class User
 end

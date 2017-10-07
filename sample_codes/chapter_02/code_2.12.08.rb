@@ -6,6 +6,7 @@ require './sample' #=> true
 # しかし、すでに読み込み済みなので修正が反映されない
 require './sample' #=> false
 
+# ----------------------------------------
 
 load './sample.rb' #=> true
 

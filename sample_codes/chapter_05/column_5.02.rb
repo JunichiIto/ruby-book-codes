@@ -1,4 +1,5 @@
 # コラム：よく使われるイディオム 1. 条件分岐で変数に代入
+
 currencies = { :japan => 'yen', :us => 'dollar', :india => 'rupee' }
 
 # 特定のキーに対応する値を取得する（キーがなければnil）
@@ -9,6 +10,7 @@ if currency
 end
 #=> YEN
 
+# ----------------------------------------
 
 currencies = { :japan => 'yen', :us => 'dollar', :india => 'rupee' }
 
@@ -18,6 +20,7 @@ if currency = currencies[:japan]
 end
 #=> YEN
 
+# ----------------------------------------
 
 currencies = { :japan => 'yen', :us => 'dollar', :india => 'rupee' }
 

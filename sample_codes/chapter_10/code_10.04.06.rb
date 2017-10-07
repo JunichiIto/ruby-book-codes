@@ -10,6 +10,7 @@ class EffectsTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 module Effects
   # 省略

@@ -25,6 +25,7 @@ else
 end
 #=> "ciao"
 
+# ----------------------------------------
 
 # whenに複数の値を指定する
 country = 'アメリカ'
@@ -40,21 +41,29 @@ else
 end
 #=> "Hello"
 
+# ----------------------------------------
 
 country = 'italy'
-message = case country
-          when 'japan'
-            'こんにちは'
-          when 'us'
-            'Hello'
-          when 'italy'
-            'ciao'
-          else
-            '???'
-          end
+message =
+  case country
+  when 'japan'
+    'こんにちは'
+  when 'us'
+    'Hello'
+  when 'italy'
+    'ciao'
+  else
+    '???'
+  end
 message #=> "ciao"
 
+# ----------------------------------------
 
 country = 'italy'
-case country when 'japan' then 'こんにちは' when 'us' then 'Hello' when 'italy' then 'ciao' else '???' end
+case country
+when 'japan' then 'こんにちは'
+when 'us' then 'Hello'
+when 'italy' then 'ciao'
+else '???'
+end
 #=> "ciao"

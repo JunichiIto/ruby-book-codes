@@ -1,4 +1,5 @@
 # コラム：トップレベルの同名クラスを参照する
+
 # トップレベルのSecondクラス
 class Second
   def initialize(player, uniform_number)
@@ -16,6 +17,7 @@ module Clock
   end
 end
 
+# ----------------------------------------
 
 module Clock
   class Second
@@ -27,10 +29,12 @@ module Clock
   end
 end
 
+# ----------------------------------------
 
 # initializeメソッド内のSecond.newの呼び出しに失敗する
 Clock::Second.new(13) #=> ArgumentError: wrong number of arguments (given 2, expected 1)
 
+# ----------------------------------------
 
 module Clock
   class Second
@@ -42,6 +46,7 @@ module Clock
   end
 end
 
+# ----------------------------------------
 
 # initializeメソッドの中でトップレベルのSecondクラスを参照できたのでエラーにならない
 Clock::Second.new(13)

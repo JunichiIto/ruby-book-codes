@@ -6,6 +6,7 @@ end
 buy_burger('fish', drink: true, potato: false, salad: true, chicken: false)
 #=> ArgumentError: unknown keywords: salad, chicken
 
+# ----------------------------------------
 
 # 想定外のキーワードはothers引数で受け取る
 def buy_burger(menu, drink: true, potato: true, **others)

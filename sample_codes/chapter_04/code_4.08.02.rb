@@ -3,12 +3,14 @@ fruits = ['apple', 'orange', 'melon']
 fruits.map.with_index { |fruit, i| "#{i}: #{fruit}" }
 #=> ["0: apple", "1: orange", "2: melon"]
 
+# ----------------------------------------
 
 fruits = ['apple', 'orange', 'melon']
 # 名前に"a"を含み、なおかつ添え字が奇数である要素を削除する
 fruits.delete_if.with_index { |fruit, i| fruit.include?('a') && i.odd? }
 #=> ["apple", "melon"]
 
+# ----------------------------------------
 
 fruits = ['apple', 'orange', 'melon']
 # ブロック無しでメソッドを呼び出すとEnumeratorオブジェクトが返される

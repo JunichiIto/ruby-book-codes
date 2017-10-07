@@ -9,6 +9,7 @@ class GateTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 class Gate
   def initialize(name)
@@ -16,6 +17,7 @@ class Gate
   end
 end
 
+# ----------------------------------------
 
 class Ticket
   def initialize(fare)
@@ -23,6 +25,7 @@ class Ticket
   end
 end
 
+# ----------------------------------------
 
 require 'minitest/autorun'
 require './lib/gate'
@@ -31,6 +34,7 @@ require './lib/ticket' # <= 追加
 class GateTest < Minitest::Test
   # 省略
 
+# ----------------------------------------
 
 class Gate
   # 省略

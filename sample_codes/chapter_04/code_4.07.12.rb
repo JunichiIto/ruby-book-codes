@@ -13,6 +13,7 @@ str #=> "DEFAULT"
 # 配列の要素すべてが大文字に変わってしまった！
 a #=> ["DEFAULT", "DEFAULT", "DEFAULT", "DEFAULT", "DEFAULT"]
 
+# ----------------------------------------
 
 # ブロックを使って、ブロックの戻り値を初期値とする
 a = Array.new(5) { 'default' }

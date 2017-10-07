@@ -4,6 +4,7 @@ File.exists?('./secret.txt')
 # カレントディレクトリに"secret_folder"が存在するか？
 Dir.exists?('./secret_folder')
 
+# ----------------------------------------
 
 # libディレクトリにあるfizz_buzz.rbの行数をターミナルに表示する
 File.open('./lib/fizz_buzz.rb', 'r') do |f|
@@ -15,12 +16,14 @@ File.open('./lib/hello_world.txt', 'w') do |f|
   f.puts 'Hello, world!'
 end
 
+# ----------------------------------------
 
 require 'fileutils'
 
 # libディレクトリのhello_world.txtをhello_world.rbに移動（リネーム）する
 FileUtils.mv('./lib/hello_world.txt', './lib/hello_world.rb')
 
+# ----------------------------------------
 
 require 'pathname'
 

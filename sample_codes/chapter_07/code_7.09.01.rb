@@ -22,6 +22,7 @@ product.name #=> "A great movie"
 
 Product.name #=> "Product"
 
+# ----------------------------------------
 
 class Product
   # クラスインスタンス変数
@@ -43,6 +44,7 @@ class Product
   end
 end
 
+# ----------------------------------------
 
 class Product
   # 省略

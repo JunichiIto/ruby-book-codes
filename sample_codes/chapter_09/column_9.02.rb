@@ -1,4 +1,5 @@
 # コラム：二重に例外を発生させないようにしよう
+
 def some_method
   1 / 0
 rescue => e
@@ -10,6 +11,7 @@ end
 some_method
 #=> NoMethodError: undefined method `mesage' for #<ZeroDivisionError: divided by 0>
 
+# ----------------------------------------
 
 def some_method
   # 省略

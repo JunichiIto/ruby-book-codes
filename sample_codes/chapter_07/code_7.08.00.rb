@@ -4,6 +4,7 @@ end
 
 Product::DEFAULT_PRICE #=> 0
 
+# ----------------------------------------
 
 class Product
   DEFAULT_PRICE = 0
@@ -14,6 +15,7 @@ end
 # privateなのでクラスの外部からは参照できない
 Product::DEFAULT_PRICE #=> NameError: private constant Product::DEFAULT_PRICE referenced
 
+# ----------------------------------------
 
 class Product
   def foo

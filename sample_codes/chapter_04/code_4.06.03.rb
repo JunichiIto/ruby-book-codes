@@ -2,6 +2,7 @@ to_ints('#000000') #=> [0, 0, 0]
 to_ints('#ffffff') #=> [255, 255, 255]
 to_ints('#043c78') #=> [4, 60, 120]
 
+# ----------------------------------------
 
 require 'minitest/autorun'
 require './lib/rgb'
@@ -18,6 +19,7 @@ class RgbTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 def to_hex(r, g, b)
   [r, g, b].inject('#') do |hex, n|
@@ -29,6 +31,7 @@ def to_ints(hex)
   [0, 0, 0]
 end
 
+# ----------------------------------------
 
 require 'minitest/autorun'
 require './lib/rgb'
@@ -42,21 +45,25 @@ class RgbTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 s = 'abcde'
 s[1..3] #=> "bcd"
 
+# ----------------------------------------
 
 hex = '#12abcd'
 r = hex[1..2] #=> "12"
 g = hex[3..4] #=> "ab"
 b = hex[5..6] #=> "cd"
 
+# ----------------------------------------
 
 '00'.hex #=> 0
 'ff'.hex #=> 255
 '2a'.hex #=> 42
 
+# ----------------------------------------
 
 def to_ints(hex)
   r = hex[1..2]
@@ -69,6 +76,7 @@ def to_ints(hex)
   ints
 end
 
+# ----------------------------------------
 
 class RgbTest < Minitest::Test
   # 省略

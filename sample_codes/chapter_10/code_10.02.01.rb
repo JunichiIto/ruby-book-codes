@@ -14,6 +14,7 @@ end
 #   こんにちはこんにちは
 #   こんばんは
 
+# ----------------------------------------
 
 def greeting(&block)
   puts 'おはよう'
@@ -38,6 +39,7 @@ end
 #   こんにちはこんにちは
 #   こんばんは
 
+# ----------------------------------------
 
 def greeting(&block)
   puts 'おはよう'
@@ -49,6 +51,7 @@ def greeting(&block)
   puts 'こんばんは'
 end
 
+# ----------------------------------------
 
 # 日本語版のgreetingメソッド
 def greeting_ja(&block)
@@ -86,6 +89,7 @@ end
 #   HELLO
 #   good evening
 
+# ----------------------------------------
 
 # 引数名の手前に&を付けると、ブロックと見なされる
 greeting_common(texts, &block)
@@ -93,6 +97,7 @@ greeting_common(texts, &block)
 # &なしで呼び出すと、普通の引数の1つと見なされる
 greeting_common(texts, block) #=> ArgumentError: wrong number of arguments (given 2, expected 1)
 
+# ----------------------------------------
 
 def greeting(&block)
   puts 'おはよう'

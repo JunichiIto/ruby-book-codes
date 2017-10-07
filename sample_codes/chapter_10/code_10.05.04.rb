@@ -13,6 +13,7 @@ end
 proc_return   #=> 10
 lambda_return #=> "ret: [10, 20, 30]"
 
+# ----------------------------------------
 
 def proc_break
   f = Proc.new { |n| break n * 10 }

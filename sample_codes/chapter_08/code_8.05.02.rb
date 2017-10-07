@@ -16,6 +16,7 @@ end
 product = Product.new
 product.price_tag #=> "1000円"
 
+# ----------------------------------------
 
 module Taggable
   def price_tag
@@ -25,6 +26,7 @@ module Taggable
   end
 end
 
+# ----------------------------------------
 
 class User
   include Taggable

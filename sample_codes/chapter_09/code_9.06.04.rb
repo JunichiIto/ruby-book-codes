@@ -19,6 +19,7 @@ ret = begin
       end
 ret #=> "error"
 
+# ----------------------------------------
 
 def some_method(n)
   begin

@@ -8,6 +8,7 @@ class EffectsTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 require 'minitest/autorun'
 require './lib/word_synth'
@@ -21,6 +22,7 @@ class WordSynthTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 module Effects
   def self.reverse
@@ -28,6 +30,7 @@ module Effects
   end
 end
 
+# ----------------------------------------
 
 class WordSynth
   def play(original_words)

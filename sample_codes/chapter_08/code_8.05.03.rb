@@ -2,6 +2,7 @@ Array.include?(Enumerable) #=> true
 Hash.include?(Enumerable)  #=> true
 Range.include?(Enumerable) #=> true
 
+# ----------------------------------------
 
 # 配列、ハッシュ、範囲でmapメソッドを使う
 [1, 2, 3].map { |n| n * 10 }                    #=> [10, 20, 30]

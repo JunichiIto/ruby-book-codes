@@ -15,6 +15,7 @@ end
 currency_of(:japan) #=> "yen"
 currency_of(:italy) #=> RuntimeError: 無効な国名です。italy
 
+# ----------------------------------------
 
 def currency_of(country)
   case country
@@ -32,6 +33,7 @@ end
 
 currency_of(:italy) #=> RuntimeError:
 
+# ----------------------------------------
 
 def currency_of(country)
   case country
@@ -49,6 +51,7 @@ end
 
 currency_of(:italy) #=> ArgumentError: 無効な国名です。italy
 
+# ----------------------------------------
 
 def currency_of(country)
   case country
@@ -66,6 +69,7 @@ end
 
 currency_of(:italy) #=> ArgumentError: 無効な国名です。italy
 
+# ----------------------------------------
 
 # エラーメッセージを省略して例外を発生させる（あまり良くない）
 raise ArgumentError     #=> ArgumentError: ArgumentError

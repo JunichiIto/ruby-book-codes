@@ -5,6 +5,7 @@ rescue ZeroDivisionError
 end
 #=> 0で除算しました
 
+# ----------------------------------------
 
 begin
   # NoMethodErrorを発生させる
@@ -14,6 +15,7 @@ rescue ZeroDivisionError
 end
 #=> NoMethodError: undefined method `foo' for "abc":String
 
+# ----------------------------------------
 
 begin
   'abc'.foo
@@ -24,6 +26,7 @@ rescue NoMethodError
 end
 #=> 存在しないメソッドが呼び出されました
 
+# ----------------------------------------
 
 begin
   'abc'.foo
@@ -32,6 +35,7 @@ rescue ZeroDivisionError, NoMethodError
 end
 #=> 0で除算したか、存在しないメソッドが呼び出されました
 
+# ----------------------------------------
 
 begin
   'abc'.foo

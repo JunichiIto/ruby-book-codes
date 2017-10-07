@@ -24,6 +24,7 @@ end
 # 変更後のnameメソッドの実行結果
 product.name #=> "<<A great film>>"
 
+# ----------------------------------------
 
 # 以下のProductクラスは外部ライブラリで定義されている想定
 class Product
@@ -50,6 +51,7 @@ end
 product = Product.new
 product.name #=> "<<A great film>>"
 
+# ----------------------------------------
 
 # Productクラスと同じようにnameメソッドを持つクラスがあったとする
 class User

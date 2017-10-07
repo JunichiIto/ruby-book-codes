@@ -1,36 +1,25 @@
-# コラム：継承したら同名のインスタンス変数に注意
-class Parent
-  def initialize
-    @first = 1
-    @second = 2
-    @third = 3
-  end
+# コラム：Rubyでメソッドのオーバーロード？
 
-  # 毎回"1.2.3"という文字列が返るはず（？）
-  def number
-    "#{@first}.#{@second}.#{@third}"
-  end
+def add_ten(n)
+  # nが整数以外の場合にも対応するためto_iで整数に変換する
+  n.to_i + 10
 end
 
-class Child < Parent
-  def initialize
-    super
-    @hour = 6
-    @minute = 30
-    # 偶然スーパークラスと同じ名前のインスタンス変数を使ってしまった！
-    @second = 59
-  end
+# 整数を渡す
+add_ten(1)   #=> 11
 
-  def time
-    "#{@hour}:#{@minute}:#{@second}"
-  end
+# 文字列やnilを渡す
+add_ten('2') #=> 12
+add_ten(nil) #=> 10
+
+# ----------------------------------------
+
+# 引数にデフォルト値を付ける
+def add_numbers(a = 0, b = 0)
+  a + b
 end
 
-parent = Parent.new
-parent.number #=> "1.2.3"
-
-child = Child.new
-child.time    #=> "6:30:59"
-
-# @secondが上書きされているので、意図しない結果になってしまった！
-child.number  #=> "1.59.3"
+# 引数の個数はゼロでも1個でも2個でもよい
+add_numbers       #=> 0
+add_numbers(1)    #=> 1
+add_numbers(1, 2) #=> 3

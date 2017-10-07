@@ -5,6 +5,7 @@ def to_ints(hex)
   end
 end
 
+# ----------------------------------------
 
 def to_ints(hex)
   r, g, b = hex.scan(/\w\w/)
@@ -13,9 +14,11 @@ def to_ints(hex)
   end
 end
 
+# ----------------------------------------
 
 '#12abcd'.scan(/\w\w/) #=> ["12", "ab", "cd"]
 
+# ----------------------------------------
 
 def to_ints(hex)
   hex.scan(/\w\w/).map do |s|
@@ -23,11 +26,13 @@ def to_ints(hex)
   end
 end
 
+# ----------------------------------------
 
 def to_ints(hex)
   hex.scan(/\w\w/).map(&:hex)
 end
 
+# ----------------------------------------
 
 # リファクタリング前
 def to_ints(hex)

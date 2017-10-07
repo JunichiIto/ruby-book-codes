@@ -4,9 +4,11 @@
 # ()を区切り文字に使う
 %s('ruby is fun!') #=> :"'ruby is fun!'"
 
+# ----------------------------------------
 
 %i(apple orange melon) #=> [:apple, :orange, :melon]
 
+# ----------------------------------------
 
 name = 'Alice'
 

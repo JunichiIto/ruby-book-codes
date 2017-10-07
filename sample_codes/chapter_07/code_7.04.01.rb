@@ -8,6 +8,7 @@ class GateTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 class Gate
 end

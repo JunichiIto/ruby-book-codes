@@ -8,6 +8,7 @@ a         #=> 'ruby'
 a.upcase! #=> "RUBY"
 a         #=> "RUBY"
 
+# ----------------------------------------
 
 def reverse_upcase!(s)
   s.reverse!.upcase!
@@ -16,6 +17,7 @@ s = 'ruby'
 reverse_upcase!(s) #=> "YBUR"
 s #=> "YBUR"
 
+# ----------------------------------------
 
 odd? = 1.odd?
 #=> SyntaxError: syntax error, unexpected '='

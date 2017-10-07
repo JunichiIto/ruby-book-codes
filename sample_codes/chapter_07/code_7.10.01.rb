@@ -2,6 +2,7 @@ s = 'Hello'
 s.length #=> 5
 s.size   #=> 5
 
+# ----------------------------------------
 
 class User
   def hello

@@ -12,11 +12,13 @@ end
 # 想定外の国名を渡すとnilが返る
 currency_of(:italy) #=> nil
 
+# ----------------------------------------
 
 currency = currency_of(:italy)
 # 戻り値が常にStringオブジェクトだと思い込んでしまい、upcaseメソッドを呼びだしてしまった
 currency.upcase #=> NoMethodError: undefined method `upcase' for nil:NilClass
 
+# ----------------------------------------
 
 # elseを:indiaとして扱うパターン（良くない例）
 def currency_of(country)
@@ -32,6 +34,7 @@ end
 # 矛盾した値が返ってきてしまう
 currency_of(:italy) #=> "rupee"
 
+# ----------------------------------------
 
 # elseに入ったら例外を発生させるパターン（良い例）
 def currency_of(country)

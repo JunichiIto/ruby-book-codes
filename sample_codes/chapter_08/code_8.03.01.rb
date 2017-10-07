@@ -36,6 +36,7 @@ user.name
 #=> [LOG] name is called.
 #   "Alice"
 
+# ----------------------------------------
 
 # ログ出力用のメソッドを提供するモジュール
 # 「ログ出力できる（log + able）」という意味でLoggableという名前を付けた
@@ -77,9 +78,11 @@ user.name
 #=> [LOG] name is called.
 #   "Alice"
 
+# ----------------------------------------
 
 product.log 'public?' #=> [LOG] public?
 
+# ----------------------------------------
 
 module Loggable
   # logメソッドはprivateメソッドにする

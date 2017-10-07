@@ -25,13 +25,16 @@ class DVD < Product
   end
 end
 
+# ----------------------------------------
 
 dvd = DVD.new
 dvd.to_s #=> "<DVD> <B> <A> <Product> #<DVD:0x007fbf5900e590>"
 
+# ----------------------------------------
 
 DVD.ancestors #=> [DVD, B, A, Product, Object, Kernel, BasicObject]
 
+# ----------------------------------------
 
 # fooメソッドはBasicObjectクラスまで探索しても見つからないのでエラー
 dvd.foo #=> NoMethodError: undefined method `foo' for #<DVD:0x007ffb1b9a2f68>

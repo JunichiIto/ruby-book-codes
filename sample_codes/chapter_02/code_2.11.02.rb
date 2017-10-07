@@ -19,6 +19,7 @@ nil.nil?   #=> true
 'abc'.nil? #=> false
 1.nil?     #=> false
 
+# ----------------------------------------
 
 # 3の倍数ならtrue、それ以外はfalseを返す
 def multiple_of_three?(n)

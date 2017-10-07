@@ -16,6 +16,7 @@ Product::SOME_NAMES #=> ["Foo", "Bar", "Baz", "Hoge"]
 Product::SOME_PRICES['Hoge'] = 4000
 Product::SOME_PRICES #=> {"Foo"=>1000, "Bar"=>2000, "Baz"=>3000, "Hoge"=>4000}
 
+# ----------------------------------------
 
 class Product
   SOME_NAMES = ['Foo', 'Bar', 'Baz']
@@ -32,6 +33,7 @@ Product.names_without_foo #=> ["Bar", "Baz"]
 # 定数の中身が変わってしまった！
 Product::SOME_NAMES       #=> ["Bar", "Baz"]
 
+# ----------------------------------------
 
 class Product
   # 配列を凍結する
@@ -47,6 +49,7 @@ end
 # エラーが発生するのでうっかり定数の値が変更される事故が防げる
 Product.names_without_foo #=> RuntimeError: can't modify frozen Array
 
+# ----------------------------------------
 
 class Product
   # 配列はfreezeされるが中身の文字列はfreezeされない
@@ -57,6 +60,7 @@ Product::SOME_NAMES[0].upcase!
 # 1番目の要素の値が変わってしまった！
 Product::SOME_NAMES #=> ["FOO", "Bar", "Baz"]
 
+# ----------------------------------------
 
 class Product
   # 中身の文字列もfreezeする
@@ -65,10 +69,12 @@ end
 # 今度は中身もfreezeしているので破壊的な変更はできない
 Product::SOME_NAMES[0].upcase! #=> RuntimeError: can't modify frozen String
 
+# ----------------------------------------
 
 # mapメソッドで各要素をfreezeし、最後にmapメソッドの戻り値の配列をfreezeする
 SOME_NAMES = ['Foo', 'Bar', 'Baz'].map(&:freeze).freeze
 
+# ----------------------------------------
 
 class Product
   # 数値やシンボル、true/falseはfreeze不要（しても構わないが、意味がない）

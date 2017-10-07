@@ -10,6 +10,7 @@ product = Product.new('A great movie', 1000)
 product.name #=> "A great movie"
 product.price #=> 1000
 
+# ----------------------------------------
 
 class DVD < Product
   # nameとpriceはスーパークラスでattr_readerが設定されているので定義不要
@@ -28,6 +29,7 @@ dvd.name         #=> "A great movie"
 dvd.price        #=> 1000
 dvd.running_time #=> 120
 
+# ----------------------------------------
 
 class DVD < Product
   attr_reader :running_time
@@ -43,6 +45,7 @@ dvd.name         #=> "A great movie"
 dvd.price        #=> 1000
 dvd.running_time #=> 120
 
+# ----------------------------------------
 
 class DVD < Product
   def initialize(name, price)
@@ -56,6 +59,7 @@ dvd = DVD.new('A great movie', 1000)
 dvd.name  #=> "A great movie"
 dvd.price #=> 1000
 
+# ----------------------------------------
 
 class DVD < Product
   def initialize(name, price)
@@ -67,6 +71,7 @@ end
 dvd = DVD.new('A great movie', 1000)
 #=> ArgumentError: wrong number of arguments (given 0, expected 2)
 
+# ----------------------------------------
 
 class DVD < Product
   # サブクラスで特別な処理をしないなら、同名メソッドを定義する必要はない（スーパークラスに処理を任せる）

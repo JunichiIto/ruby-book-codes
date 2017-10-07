@@ -5,6 +5,7 @@ def greeting(&block)
   puts 'こんばんは'
 end
 
+# ----------------------------------------
 
 def greeting(&block)
   # blockが何クラスのインスタンスなのかを表示する
@@ -24,6 +25,7 @@ end
 #   こんにちはこんにちは
 #   こんばんは
 
+# ----------------------------------------
 
 def greeting(&block)
   puts 'おはよう'
@@ -39,6 +41,7 @@ greeting(&repeat_proc)
 #   こんにちはこんにちは
 #   こんばんは
 
+# ----------------------------------------
 
 # &なしで呼び出すと普通の引数を1つ渡したことになる
 greeting(repeat_proc) #=> ArgumentError: wrong number of arguments (given 1, expected 0)

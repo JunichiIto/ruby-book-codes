@@ -18,6 +18,7 @@ class User
   include Aisatsu
 end
 
+# ----------------------------------------
 
 user = User.new
 
@@ -27,5 +28,6 @@ user.konnichiwa #=> "こんにちは。"
 # Greetingモジュールのメソッドを呼び出す
 user.hello      #=> "hello."
 
+# ----------------------------------------
 
 User.ancestors #=> [User, Aisatsu, Greeting, Object, Kernel, BasicObject]

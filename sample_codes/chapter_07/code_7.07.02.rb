@@ -10,6 +10,7 @@ user = User.new
 # privateメソッドなのでクラスの外部から呼び出せない
 user.hello #=> NoMethodError: private method `hello' called for #<User:0x007fb18a3e9fc0>
 
+# ----------------------------------------
 
 class User
   def hello
@@ -26,6 +27,7 @@ end
 user = User.new
 user.hello #=> NoMethodError: private method `name' called for #<User:0x007fb18a3903d0>
 
+# ----------------------------------------
 
 class User
   def hello

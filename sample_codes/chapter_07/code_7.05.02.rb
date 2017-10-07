@@ -17,6 +17,7 @@ Foo.bar #=> クラスメソッド内のself: Foo
 foo = Foo.new
 foo.baz #=> インスタンスメソッド内のself: #<Foo:0x007f9d7c0467c8>
 
+# ----------------------------------------
 
 class Foo
   def self.bar
@@ -35,6 +36,7 @@ Foo.bar #=> NoMethodError: undefined method `baz' for Foo:Class
 foo = Foo.new
 foo.baz #=> NoMethodError: undefined method `bar' for #<Foo:0x007fbffc094070>
 
+# ----------------------------------------
 
 class Foo
   # この時点ではクラスメソッドbarが定義されていないので呼び出せない
@@ -51,6 +53,7 @@ class Foo
 end
 #=> hello
 
+# ----------------------------------------
 
 class Foo
   # クラス定義が読み込まれたタイミングで"Hello!"を3回出力する

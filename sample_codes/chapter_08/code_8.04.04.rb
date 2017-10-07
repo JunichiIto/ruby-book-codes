@@ -15,6 +15,7 @@ class DeepFreezableTest < Minitest::Test
     assert Bank::CURRENCIES.all? { |key, value| key.frozen? && value.frozen? }
   end
 
+# ----------------------------------------
 
 module DeepFreezable
   def deep_freeze(array_or_hash)

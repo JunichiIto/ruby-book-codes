@@ -4,3 +4,8 @@
 # このメソッドが定義されているのはactivesupport gemのinflections.rbの118行目
 'OrderItem'.method(:underscore).source_location
 #=> ["/(gemがインストールされているパス)/activesupport-5.0.0/lib/active_support/core_ext/string/inflections.rb", 118]
+
+# ----------------------------------------
+
+# upcaseメソッドはRuby標準のメソッド
+'HelloWorld'.method(:upcase).source_location #=> nil

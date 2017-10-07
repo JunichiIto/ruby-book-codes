@@ -18,6 +18,7 @@ dvd = DVD.new
 # 内部でスーパークラスのprivateメソッドを呼んでいるがエラーにはならない
 dvd.to_s #=> "name: A great movie"
 
+# ----------------------------------------
 
 class Product
   def to_s

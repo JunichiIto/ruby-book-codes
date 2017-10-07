@@ -16,6 +16,7 @@ Loggable.class #=> Module
 # ModuleクラスのスーパークラスはObjectクラス
 Loggable.class.superclass #=> Object
 
+# ----------------------------------------
 
 class User
   p self       #=> User

@@ -4,6 +4,7 @@ if status != 'ok'
 end
 #=> "何か異常があります"
 
+# ----------------------------------------
 
 status = 'error'
 unless status == 'ok'
@@ -11,6 +12,7 @@ unless status == 'ok'
 end
 #=> "何か異常があります"
 
+# ----------------------------------------
 
 status = 'ok'
 unless status == 'ok'
@@ -20,6 +22,7 @@ else
 end
 #=> "正常です"
 
+# ----------------------------------------
 
 status = 'error'
 
@@ -35,6 +38,7 @@ message #=> '何か異常があります'
 '何か異常があります' unless status == 'ok'
 #=> "何か異常があります"
 
+# ----------------------------------------
 
 status = 'error'
 unless status == 'ok' then
@@ -42,6 +46,7 @@ unless status == 'ok' then
 end
 #=> "何か異常があります"
 
+# ----------------------------------------
 
 status = 'error'
 # unlessを無理に使わなくてもよい

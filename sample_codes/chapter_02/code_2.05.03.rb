@@ -8,11 +8,13 @@ else
   # それ以外の条件の処理
 end
 
+# ----------------------------------------
 
 if 条件A
   # 条件Aの処理
 end
 
+# ----------------------------------------
 
 n = 11
 if n > 10
@@ -22,6 +24,7 @@ else
 end
 #=> "10より大きい"
 
+# ----------------------------------------
 
 country = 'italy'
 if country == 'japan'
@@ -35,19 +38,22 @@ else
 end
 #=> "ciao"
 
+# ----------------------------------------
 
 country = 'italy'
-greeting = if country == 'japan'
-             'こんにちは'
-           elsif country == 'us'
-             'Hello'
-           elsif country == 'italy'
-             'ciao'
-           else
-             '???'
-           end
+greeting =
+  if country == 'japan'
+    'こんにちは'
+  elsif country == 'us'
+    'Hello'
+  elsif country == 'italy'
+    'ciao'
+  else
+    '???'
+  end
 greeting #=> "ciao"
 
+# ----------------------------------------
 
 point = 7
 day = 1
@@ -57,6 +63,7 @@ if day == 1
 end
 point #=> 35
 
+# ----------------------------------------
 
 point = 7
 day = 1
@@ -64,6 +71,7 @@ day = 1
 point *= 5 if day == 1
 point #=> 35
 
+# ----------------------------------------
 
 country = 'italy'
 if country == 'japan' then
@@ -77,7 +85,12 @@ else
 end
 #=> "ciao"
 
+# ----------------------------------------
 
 country = 'italy'
-if country == 'japan' then 'こんにちは' elsif country == 'us' then 'Hello' elsif country == 'italy' then 'ciao' else '???' end
+if country == 'japan' then 'こんにちは'
+elsif country == 'us' then 'Hello'
+elsif country == 'italy' then 'ciao'
+else '???'
+end
 #=> "ciao"

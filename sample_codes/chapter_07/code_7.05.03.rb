@@ -21,6 +21,7 @@ end
 product = Product.new('A great movie', 1000)
 product.to_s #=> "name: A great movie, price: 1000円"
 
+# ----------------------------------------
 
 # クラス名.メソッドの形式でクラスメソッドを呼び出す
 Product.format_price(price)

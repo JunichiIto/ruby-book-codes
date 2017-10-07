@@ -22,6 +22,7 @@ user.name #=> "alice"
 user.change_name
 user.name #=> "ありす"
 
+# ----------------------------------------
 
 module NameChanger
   def change_name

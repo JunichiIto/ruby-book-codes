@@ -7,3 +7,8 @@ h = { us: 'dollar', india: 'rupee' }
 #=> SyntaxError: syntax error, unexpected '}', expecting =>
 #   { japan: 'yen', h }
 #                      ^
+
+# ----------------------------------------
+
+h = { us: 'dollar', india: 'rupee' }
+{ japan: 'yen' }.merge(h) #=> {:japan=>"yen", :us=>"dollar", :india=>"rupee"}

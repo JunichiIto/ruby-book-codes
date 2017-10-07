@@ -5,6 +5,7 @@ module Greeter
 end
 greeter = Greeter.new
 
+# ----------------------------------------
 
 puts 'Start.'
 module Greeter
@@ -16,6 +17,7 @@ greeter = Greeter.new
 # 上の行で例外が発生するため、ここから下は実行されない
 puts 'End.'
 
+# ----------------------------------------
 
 puts 'Start.'
 module Greeter

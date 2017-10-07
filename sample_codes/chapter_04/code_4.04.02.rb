@@ -3,6 +3,7 @@ numbers = [1, 2, 3, 4, 5, 6]
 even_numbers = numbers.select { |n| n.even? }
 even_numbers #=> [2, 4, 6]
 
+# ----------------------------------------
 
 numbers = [1, 2, 3, 4, 5, 6]
 # 3の倍数を除外する（3の倍数以外を集める）

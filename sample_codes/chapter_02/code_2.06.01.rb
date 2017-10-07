@@ -4,6 +4,7 @@ def add(a, b)
 end
 add(1, 2) #=> 3
 
+# ----------------------------------------
 
 def greeting(country)
   # "こんにちは"または"hello"がメソッドの戻り値になる
@@ -16,6 +17,7 @@ end
 greeting('japan') #=> "こんにちは"
 greeting('us')    #=> "hello"
 
+# ----------------------------------------
 
 def greeting(country)
   # countryがnilならメッセージを返してメソッドを抜ける

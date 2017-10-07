@@ -8,6 +8,7 @@ class FizzBuzzTest < Minitest::Test
     assert_equal '2', fizz_buzz(2)
     # 以下省略
 
+# ----------------------------------------
 
 require 'byebug'
 byebug

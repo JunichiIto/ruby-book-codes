@@ -1,24 +1,37 @@
-# コラム：メソッド名の表記法について
-# 定数名の例
-DEFAULT_PRICE = 0
-UNITS = { m: 1.0, ft: 3.28, in: 39.37 }
+# コラム：継承したら同名のインスタンス変数に注意
 
-
-class Product
-  DEFAULT_PRICE = 0
-
-  def self.default_price
-    # クラスメソッドから定数を参照する
-    DEFAULT_PRICE
+class Parent
+  def initialize
+    @first = 1
+    @second = 2
+    @third = 3
   end
 
-  def default_price
-    # インスタンスメソッドから定数を参照する
-    DEFAULT_PRICE
+  # 毎回"1.2.3"という文字列が返るはず（？）
+  def number
+    "#{@first}.#{@second}.#{@third}"
   end
 end
 
-Product.default_price #=> 0
+class Child < Parent
+  def initialize
+    super
+    @hour = 6
+    @minute = 30
+    # 偶然スーパークラスと同じ名前のインスタンス変数を使ってしまった！
+    @second = 59
+  end
 
-product = Product.new
-product.default_price #=> 0
+  def time
+    "#{@hour}:#{@minute}:#{@second}"
+  end
+end
+
+parent = Parent.new
+parent.number #=> "1.2.3"
+
+child = Child.new
+child.time    #=> "6:30:59"
+
+# @secondが上書きされているので、意図しない結果になってしまった！
+child.number  #=> "1.59.3"

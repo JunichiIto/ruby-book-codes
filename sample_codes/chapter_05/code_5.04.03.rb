@@ -14,24 +14,29 @@ buy_burger('cheese', true, true)
 # フィッシュバーガーとドリンクを購入する
 buy_burger('fish', true, false)
 
+# ----------------------------------------
 
 buy_burger('cheese', true, true)
 buy_burger('fish', true, false)
 
+# ----------------------------------------
 
 def メソッド名(キーワード1: デフォルト値1, キーワード引数2: デフォルト値2)
   # メソッドの実装
 end
 
+# ----------------------------------------
 
 def buy_burger(menu, drink: true, potato: true)
   # 省略
 end
 
+# ----------------------------------------
 
 buy_burger('cheese', drink: true, potato: true)
 buy_burger('fish', drink: true, potato: false)
 
+# ----------------------------------------
 
 # キーワード引数を使わない場合
 buy_burger('cheese', true, true)
@@ -41,6 +46,7 @@ buy_burger('fish', true, false)
 buy_burger('cheese', drink: true, potato: true)
 buy_burger('fish', drink: true, potato: false)
 
+# ----------------------------------------
 
 # drinkはデフォルト値のtrueを使うので指定しない
 buy_burger('fish', potato: false)
@@ -48,12 +54,15 @@ buy_burger('fish', potato: false)
 # drinkもpotatoもデフォルト値のtrueを使うので指定しない
 buy_burger('cheese')
 
+# ----------------------------------------
 
 buy_burger('fish', potato: false, drink: true)
 
+# ----------------------------------------
 
 buy_burger('fish', salad: true) #=> ArgumentError: unknown keyword: salad
 
+# ----------------------------------------
 
 # デフォルト値なしのキーワード引数を使ってメソッドを定義する
 def buy_burger(menu, drink:, potato:)
@@ -66,6 +75,7 @@ buy_burger('cheese', drink: true, potato: true)
 # キーワード引数を省略するとエラーになる
 buy_burger('fish', potato: false) #=> ArgumentError: missing keywords: drink
 
+# ----------------------------------------
 
 # キーワード引数と一致するハッシュであれば、メソッドの引数として渡すことができる
 params = { drink: true, potato: false }

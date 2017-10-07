@@ -1,4 +1,5 @@
 # コラム：Singletonモジュールを使う
+
 require 'singleton'
 
 class Configuration

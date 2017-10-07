@@ -1,2 +1,3 @@
-# コラム：Rubyのコーディングルール
-assert_equal 期待する結果, テスト対象となる値や式
+# コラム：require\_relativeを使う場合
+
+require_relative '../lib/fizz_buzz'

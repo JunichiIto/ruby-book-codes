@@ -9,16 +9,19 @@ a.delete(100) do
 end
 #=> "NG"
 
+# ----------------------------------------
 
 a.delete 100 do
   'NG'
 end
 #=> "NG"
 
+# ----------------------------------------
 
 a.delete 100 { 'NG' }
 #=> SyntaxError: syntax error, unexpected '{', expecting end-of-input
 
+# ----------------------------------------
 
 a.delete(100) { 'NG' }
 #=> "NG"

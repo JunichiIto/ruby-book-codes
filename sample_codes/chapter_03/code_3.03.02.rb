@@ -10,6 +10,7 @@ def fizz_buzz(n)
   end
 end
 
+# ----------------------------------------
 
 require 'minitest/autorun'
 
@@ -25,8 +26,10 @@ class FizzBuzzTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 require 'minitest/autorun'
 require './lib/fizz_buzz' # <= 追加
 
 class FizzBuzzTest < Minitest::Test
+# 省略

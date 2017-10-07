@@ -14,6 +14,7 @@ synth.add_effect(Effects.loud(3))
 synth.add_effect(Effects.reverse)
 synth.play('Ruby is fun!') #=> "!!!YYBBUURR !!!SSII !!!!!NNUUFF"
 
+# ----------------------------------------
 
 class WordSynth
   def initialize

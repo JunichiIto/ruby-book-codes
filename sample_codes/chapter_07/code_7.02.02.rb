@@ -10,14 +10,17 @@ alice.full_name
 bob.full_name
 #-> "Bob Python"
 
+# ----------------------------------------
 
 user = User.new('Alice', 'Ruby', 20)
 user.first_name
 
+# ----------------------------------------
 
 user = User.new('Alice', 'Ruby', 20)
 user.first_name
 
+# ----------------------------------------
 
 class User
   # first_nameの読み書きを許可する

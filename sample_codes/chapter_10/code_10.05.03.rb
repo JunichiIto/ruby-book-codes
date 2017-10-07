@@ -9,11 +9,13 @@ def generate_proc(array)
   end
 end
 
+# ----------------------------------------
 
 values = []
 sample_proc = generate_proc(values)
 values #=> []
 
+# ----------------------------------------
 
 # Procオブジェクトを実行するとgenerate_procメソッドの引数だったvaluesの中身が書き換えられる
 sample_proc.call

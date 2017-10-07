@@ -16,6 +16,7 @@ end
 
 fizz_buzz(nil) #=> NoMethodError undefined method `%' for nil:NilClass
 
+# ----------------------------------------
 
 def fizz_buzz(n)
   if n % 15 == 0

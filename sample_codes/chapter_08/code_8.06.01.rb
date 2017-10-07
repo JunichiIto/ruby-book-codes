@@ -5,6 +5,7 @@ class Second
   end
 end
 
+# ----------------------------------------
 
 class Second
   def initialize(digits)
@@ -12,6 +13,7 @@ class Second
   end
 end
 
+# ----------------------------------------
 
 # 二塁手のAliceを作成したい（が、区別できない）
 Second.new('Alice', 13)
@@ -19,6 +21,7 @@ Second.new('Alice', 13)
 # 時計の13秒を作成したい（が、区別できない）
 Second.new(13)
 
+# ----------------------------------------
 
 module Baseball
   # これはBaseballモジュールに属するSecondクラス
@@ -39,6 +42,7 @@ module Clock
   end
 end
 
+# ----------------------------------------
 
 # 二塁手のAliceを作成する（ちゃんと区別できる）
 Baseball::Second.new('Alice', 13)

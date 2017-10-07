@@ -1,18 +1,22 @@
 currencies = { japan: 'yen', us: 'dollar', india: 'rupee' }
 currencies.to_a #=> [[:japan, "yen"], [:us, "dollar"], [:india, "rupee"]]
 
+# ----------------------------------------
 
 array = [[:japan, "yen"], [:us, "dollar"], [:india, "rupee"]]
 array.to_h #=> {:japan=>"yen", :us=>"dollar", :india=>"rupee"}
 
+# ----------------------------------------
 
 array = [1, 2, 3, 4]
 array.to_h #=> TypeError: wrong element type Integer at 0 (expected array)
 
+# ----------------------------------------
 
 array = [[:japan, "yen"], [:japan, "円"]]
 array.to_h #=> {:japan=>"円"}
 
+# ----------------------------------------
 
 # 配列の配列をHash[]に渡す
 array = [[:japan, "yen"], [:us, "dollar"], [:india, "rupee"]]

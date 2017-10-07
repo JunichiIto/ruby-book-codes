@@ -12,6 +12,7 @@ end
 user = User.new('Alice')
 user.hello #=> "Hello, I am Alice."
 
+# ----------------------------------------
 
 class User
   # 省略
@@ -25,6 +26,7 @@ end
 user = User.new('Alice')
 user.hello #=> "Hello, I am cieAl."
 
+# ----------------------------------------
 
 class User
   # 省略
@@ -39,6 +41,7 @@ user = User.new('Alice')
 # いきなりshuffled_nameを参照したのでエラーになる
 user.hello #=> NameError: undefined local variable or method `shuffled_name' for #<User:0x007fb18a211cc0 @name="Alice">
 
+# ----------------------------------------
 
 class User
   def initialize(name)
@@ -54,6 +57,7 @@ user = User.new('Alice')
 # @nameを参照するとnilになる（つまり名前の部分に何も出ない）
 user.hello #=> "Hello, I am ."
 
+# ----------------------------------------
 
 class User
   def initialize(name)
@@ -69,6 +73,7 @@ user = User.new('Alice')
 # タイプミスに気づいていないと、名前が出ないことにビックリするはず
 user.hello #=> "Hello, I am ."
 
+# ----------------------------------------
 
 class User
   def initialize(name)
@@ -84,6 +89,7 @@ user = User.new('Alice')
 # nameメソッドを経由して@nameの内容を取得する
 user.name #=> "Alice"
 
+# ----------------------------------------
 
 class User
   def initialize(name)
@@ -105,6 +111,7 @@ user = User.new('Alice')
 user.name = 'Bob'
 user.name #=> "Bob"
 
+# ----------------------------------------
 
 class User
   # @nameを読み書きするメソッドが自動的に定義される
@@ -122,6 +129,7 @@ user.name = 'Bob'
 # @nameを参照する
 user.name #=> "Bob"
 
+# ----------------------------------------
 
 class User
   # 読み取り用のメソッドだけを自動的に定義する
@@ -138,6 +146,7 @@ user.name #=> "Alice"
 # @nameを変更しようとするとエラーになる
 user.name = 'Bob' #=> NoMethodError: undefined method `name=' for #<User:0x007fb18a292230 @name="Alice">
 
+# ----------------------------------------
 
 class User
   # 書き込み用のメソッドだけを自動的に定義する
@@ -154,6 +163,7 @@ user.name = 'Bob'
 # @nameの参照はできない
 user.name #=> NoMethodError: undefined method `name' for #<User:0x007fb18c000150 @name="Bob">
 
+# ----------------------------------------
 
 class User
   # @nameと@ageへのアクセサメソッドを定義する

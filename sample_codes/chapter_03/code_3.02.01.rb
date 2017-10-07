@@ -5,3 +5,7 @@ class SampleTest < Minitest::Test
     assert_equal 'RUBY', 'ruby'.upcase
   end
 end
+
+# ----------------------------------------
+
+assert_equal 期待する結果, テスト対象となる値や式

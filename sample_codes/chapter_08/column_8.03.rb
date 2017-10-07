@@ -1,4 +1,5 @@
 # コラム：モジュールの用途はひとつとは限らない
+
 # AwesomeApiモジュールは設定値を保持する（用途その１）
 module AwesomeApi
   @base_url = ''

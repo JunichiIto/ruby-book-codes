@@ -15,6 +15,7 @@ def convert_heisei_to_date(heisei_text)
   end
 end
 
+# ----------------------------------------
 
 def convert_heisei_to_date(heisei_text)
   m = heisei_text.match(/平成(?<jp_year>\d+)年(?<month>\d+)月(?<day>\d+)日/)

@@ -1,18 +1,33 @@
-# コラム：irb上でクラス定義を繰り返す際の注意点
-class User
-  def hello
-    'Hello.'
-  end
-end
+# コラム：RDocでAPIドキュメントを作成する
 
-# このクラス定義は既存のUserクラスにbyeメソッドを追加することになる
-class User
-  def bye
-    'Bye.'
-  end
-end
+# 改札機を表すクラス
+class Gate
+  STATIONS = [:umeda, :juso, :mikuni] # :nodoc:
+  FARES = [150, 190] # :nodoc:
 
-user = User.new
-# helloメソッドもbyeメソッドも呼び出せる
-user.hello #=> "Hello."
-user.bye   #=> "Bye."
+  # Gateオブジェクトの作成
+  # ==== 引数
+  # * +name+ - 駅名
+  def initialize(name)
+    @name = name
+  end
+
+  # 改札機を通って駅に入場する
+  # ==== 引数
+  # * +ticket+ - 切符
+  def enter(ticket)
+    ticket.stamp(@name)
+  end
+
+  # 改札機を通って駅から出場する
+  # ==== 引数
+  # * +ticket+ - 切符
+  # ==== 戻り値
+  # * +boolean+ - 運賃が足りていれば+true+、不足していれば+false+
+  def exit(ticket)
+    fare = calc_fare(ticket)
+    fare <= ticket.fare
+  end
+
+  # 省略
+end

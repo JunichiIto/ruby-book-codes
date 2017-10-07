@@ -8,6 +8,7 @@ class DeepFreezableTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 module DeepFreezable
   def deep_freeze(array_or_hash)

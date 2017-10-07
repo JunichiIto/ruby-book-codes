@@ -18,6 +18,7 @@ end
 
 currency_of(:italy) #=> NoCountryError: 無効な国名です。italy
 
+# ----------------------------------------
 
 class NoCountryError < StandardError
   # 国名を属性として取得できるようにする
@@ -50,6 +51,7 @@ rescue NoCountryError => e
 end
 #=> 無効な国名です。 italy
 
+# ----------------------------------------
 
 class NoCountryError < StandardError
   def initialize(country, other_info)

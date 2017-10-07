@@ -5,6 +5,7 @@ def to_hex(r, g, b)
     b.to_s(16).rjust(2, '0')
 end
 
+# ----------------------------------------
 
 def to_hex(r, g, b)
   hex = '#'
@@ -14,6 +15,7 @@ def to_hex(r, g, b)
   hex
 end
 
+# ----------------------------------------
 
 def to_hex(r, g, b)
   [r, g, b].inject('#') do |hex, n|

@@ -11,6 +11,7 @@ class GateTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 class Gate
   # 省略
@@ -22,6 +23,7 @@ class Gate
   # 省略
 end
 
+# ----------------------------------------
 
 class Ticket
   # 省略
@@ -31,6 +33,7 @@ class Ticket
   end
 end
 
+# ----------------------------------------
 
 class Ticket
   attr_reader :fare, :stamped_at
@@ -38,6 +41,7 @@ class Ticket
   # 省略
 end
 
+# ----------------------------------------
 
 class Gate
   STATIONS = [:umeda, :juso, :mikuni]
@@ -53,9 +57,11 @@ class Gate
   end
 end
 
+# ----------------------------------------
 
 [:umeda, :juso, :mikuni].index(:juso) #=> 1
 
+# ----------------------------------------
 
 class Gate
   # 省略

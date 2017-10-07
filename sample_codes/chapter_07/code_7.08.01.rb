@@ -12,6 +12,7 @@ Product::DEFAULT_PRICE        #=> 1000
 Product::DEFAULT_PRICE = 3000 #=> warning: already initialized constant Product::DEFAULT_PRICE
 Product::DEFAULT_PRICE        #=> 3000
 
+# ----------------------------------------
 
 # クラスを凍結する
 Product.freeze
@@ -19,6 +20,7 @@ Product.freeze
 # freezeすると変更できなくなる
 Product::DEFAULT_PRICE = 5000 #=> RuntimeError: can't modify frozen #<Class:Product>
 
+# ----------------------------------------
 
 class Product
   DEFAULT_PRICE = 0

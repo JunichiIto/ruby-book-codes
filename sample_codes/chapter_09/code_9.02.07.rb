@@ -4,6 +4,7 @@ rescue
   retry # 処理をやり直す
 end
 
+# ----------------------------------------
 
 retry_count = 0
 begin

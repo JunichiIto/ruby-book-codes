@@ -5,6 +5,7 @@ class EffectsTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 module Effects
   def self.reverse

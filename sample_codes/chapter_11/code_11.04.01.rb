@@ -6,6 +6,7 @@ def to_hex(r, g, b)
   end
 end
 
+# ----------------------------------------
 
 module DeepFreezable
   def deep_freeze(array_or_hash)
@@ -26,6 +27,7 @@ module DeepFreezable
   end
 end
 
+# ----------------------------------------
 
 def calc_fare(ticket)
   from = STATIONS.index(ticket.stamped_at)

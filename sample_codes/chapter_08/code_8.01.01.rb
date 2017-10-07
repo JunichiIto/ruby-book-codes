@@ -3,12 +3,14 @@ class Team
   COUNTRIES = ['Japan', 'US', 'India'].freeze
 end
 
+# ----------------------------------------
 
 class Team
   # 思いがけない事故を防ぐため配列の要素もfreezeする
   COUNTRIES = ['Japan'.freeze, 'US'.freeze, 'India'.freeze].freeze
 end
 
+# ----------------------------------------
 
 class Team
   COUNTRIES = deep_freeze(['Japan', 'US', 'India'])

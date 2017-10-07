@@ -5,6 +5,7 @@ module Greeter
   end
 end
 
+# ----------------------------------------
 
 # モジュールのインスタンスは作成できない
 greeter = Greeter.new #=> NoMethodError: undefined method `new' for Greeter:Module

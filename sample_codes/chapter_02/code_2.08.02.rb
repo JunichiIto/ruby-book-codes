@@ -9,6 +9,7 @@ puts %Q!He said, "#{something}"!  #=> He said, "Hello."
 something = "Bye."
 puts %!He said, "#{something}"!   #=> He said, "Bye."
 
+# ----------------------------------------
 
 # ?を区切り文字として使う
 puts %q?He said, "Don't speak."?  #=> He said, "Don't speak."

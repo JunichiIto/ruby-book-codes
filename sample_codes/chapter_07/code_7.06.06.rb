@@ -22,6 +22,7 @@ product.to_s #=> "#<Product:0x007fe4e42e9f20>"
 dvd = DVD.new('An awesome film', 3000, 120)
 dvd.to_s     #=> "#<DVD:0x007fe4e42c2830>"
 
+# ----------------------------------------
 
 class Product
   # 省略
@@ -37,6 +38,7 @@ product.to_s #=> "name: A great movie, price: 1000"
 dvd = DVD.new('An awesome film', 3000, 120)
 dvd.to_s     #=> "name: An awesome film, price: 3000"
 
+# ----------------------------------------
 
 class DVD < Product
   # 省略
@@ -49,6 +51,7 @@ end
 dvd = DVD.new('An awesome film', 3000, 120)
 dvd.to_s #=> "name: An awesome film, price: 3000, running_time: 120"
 
+# ----------------------------------------
 
 class DVD < Product
   # 省略

@@ -7,6 +7,7 @@ module StringShuffle
   end
 end
 
+# ----------------------------------------
 
 # 通常はStringクラスにshuffleメソッドはない
 'Alice'.shuffle #=> NoMethodError: undefined method `shuffle' for "Alice":String
@@ -34,6 +35,7 @@ user.shuffled_name #=> "cliAe"
 # Userクラスを経由しない場合はshuffleメソッドは使えない
 'Alice'.shuffle #=> NoMethodError: undefined method `shuffle' for "Alice":String
 
+# ----------------------------------------
 
 # StringShuffleモジュールを読み込む
 require './string_shuffle'
@@ -63,6 +65,7 @@ puts 'Alice'.shuffle    #=> liceA
 
 # 他のファイルではshuffleメソッドは使えない
 
+# ----------------------------------------
 
 module SomeModule
   refine Object do
@@ -74,6 +77,7 @@ module SomeModule
   end
 end
 
+# ----------------------------------------
 
 module SomeModule
   # Ruby 2.4からはモジュールもrefine可能

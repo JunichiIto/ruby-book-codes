@@ -2,6 +2,7 @@ def display_name(object)
   puts "Name is <<#{object.name}>>"
 end
 
+# ----------------------------------------
 
 class User
   def name
@@ -22,6 +23,7 @@ display_name(user) #=> Name is <<Alice>>
 product = Product.new
 display_name(product) #=> Name is <<A great movie>>
 
+# ----------------------------------------
 
 class Product
   def initialize(name, price)
@@ -36,6 +38,7 @@ class Product
   end
 end
 
+# ----------------------------------------
 
 class DVD < Product
   # 在庫があればtrueを返す
@@ -45,6 +48,7 @@ class DVD < Product
   end
 end
 
+# ----------------------------------------
 
 product = Product.new('A great film', 1000)
 # スーパークラスはstock?メソッドを持たないのでエラーが起きる
@@ -54,6 +58,7 @@ dvd = DVD.new('An awesome film', 3000)
 # サブクラスはstock?メソッドを持つのでエラーが起きない
 dvd.display_text     #=> "商品名: An awesome film 価格: 3000円 在庫: あり"
 
+# ----------------------------------------
 
 class Product
   # 省略

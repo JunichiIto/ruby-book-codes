@@ -6,6 +6,7 @@ fizz_buzz(5)  #=> "Buzz"
 fizz_buzz(6)  #=> "Fizz"
 fizz_buzz(15) #=> "Fizz Buzz"
 
+# ----------------------------------------
 
 def fizz_buzz(n)
   n.to_s
@@ -14,6 +15,7 @@ end
 puts fizz_buzz(1)
 puts fizz_buzz(2)
 
+# ----------------------------------------
 
 def fizz_buzz(n)
   if n % 3 == 0
@@ -27,6 +29,7 @@ puts fizz_buzz(1)
 puts fizz_buzz(2)
 puts fizz_buzz(3)
 
+# ----------------------------------------
 
 def fizz_buzz(n)
   if n % 3 == 0
@@ -45,6 +48,7 @@ puts fizz_buzz(4)
 puts fizz_buzz(5)
 puts fizz_buzz(6)
 
+# ----------------------------------------
 
 def fizz_buzz(n)
   if n % 15 == 0

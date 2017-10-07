@@ -20,11 +20,13 @@ class GateTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 class GateTest < Minitest::Test
   def test_umeda_to_juso
     # 省略
 
+# ----------------------------------------
 
 class GateTest < Minitest::Test
   # テストメソッドが実行される前にこのメソッドが毎回呼ばれる

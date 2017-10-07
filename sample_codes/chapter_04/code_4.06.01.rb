@@ -6,11 +6,13 @@ class RgbTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 def to_hex(r, g, b)
   '#000000'
 end
 
+# ----------------------------------------
 
 require 'minitest/autorun'
 require './lib/rgb'
@@ -21,6 +23,7 @@ class RgbTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 require 'minitest/autorun'
 require './lib/rgb'
@@ -32,19 +35,23 @@ class RgbTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 0.to_s(16)   #=> "0"
 255.to_s(16) #=> "ff"
 
+# ----------------------------------------
 
 '0'.rjust(5)      #=> "    0"
 '0'.rjust(5, '0') #=> "00000"
 '0'.rjust(5, '_') #=> "____0"
 
+# ----------------------------------------
 
 0.to_s(16).rjust(2, '0')   #=> "00"
 255.to_s(16).rjust(2, '0') #=> "ff"
 
+# ----------------------------------------
 
 def to_hex(r, g, b)
   '#' +
@@ -53,6 +60,7 @@ def to_hex(r, g, b)
     b.to_s(16).rjust(2, '0')
 end
 
+# ----------------------------------------
 
 class RgbTest < Minitest::Test
   def test_to_hex

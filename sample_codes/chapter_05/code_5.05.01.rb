@@ -6,11 +6,13 @@ class ConvertLengthTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 def convert_length(length, unit_from, unit_to)
   39.37
 end
 
+# ----------------------------------------
 
 require 'minitest/autorun'
 require './lib/convert_length'

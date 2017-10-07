@@ -9,6 +9,7 @@ end
 # クラスメソッドはprivateメソッドにならない！
 User.hello #=> "Hello!"
 
+# ----------------------------------------
 
 class User
   class << self
@@ -22,6 +23,7 @@ class User
 end
 User.hello #=> NoMethodError: private method `hello' called for User:Class
 
+# ----------------------------------------
 
 class User
   def self.hello

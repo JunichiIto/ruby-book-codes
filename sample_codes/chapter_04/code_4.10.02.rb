@@ -17,6 +17,7 @@ end
 #   orange, 1
 #   orange, 3
 
+# ----------------------------------------
 
 fruits = ['apple', 'melon', 'orange']
 numbers = [1, 2, 3]
@@ -35,6 +36,7 @@ end
 #   orange, 3
 #   UncaughtThrowError: uncaught throw :foo
 
+# ----------------------------------------
 
 ret = catch :done do
         throw :done

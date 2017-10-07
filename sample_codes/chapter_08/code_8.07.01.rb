@@ -8,6 +8,7 @@ end
 # モジュール単体でそのメソッドを呼び出せる
 Loggable.log('Hello.') #=> [LOG] Hello.
 
+# ----------------------------------------
 
 module Loggable
   class << self

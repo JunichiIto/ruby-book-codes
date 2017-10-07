@@ -5,6 +5,7 @@ class WordSynthTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 class WordSynth
   def initialize
@@ -22,6 +23,7 @@ class WordSynth
   end
 end
 
+# ----------------------------------------
 
 class WordSynthTest < Minitest::Test
   # 省略
@@ -33,6 +35,7 @@ class WordSynthTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 class WordSynthTest < Minitest::Test
   # 省略
@@ -46,6 +49,7 @@ class WordSynthTest < Minitest::Test
   end
 end
 
+# ----------------------------------------
 
 class WordSynthTest < Minitest::Test
   # 省略

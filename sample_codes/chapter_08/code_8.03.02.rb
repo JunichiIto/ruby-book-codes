@@ -23,6 +23,7 @@ Product.create_products([]) #=> [LOG] create_products is called.
 # Productクラスのクラスメソッドとして直接呼び出すことも可能
 Product.log('Hello.')       #=> [LOG] Hello.
 
+# ----------------------------------------
 
 class Product
   extend Loggable
