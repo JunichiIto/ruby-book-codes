@@ -37,6 +37,7 @@ class SampleCodesTest < Minitest::Test
     'code_4.06.01.rb' => { run_ignore: [18, 29] },
     'code_4.06.03.rb' => { run_ignore: [1..3, 8, 37] },
     'code_4.07.02.rb' => { run_ignore: [5] },
+    'code_4.09.07.rb' => { syntax_ignore: [21] },
     'code_4.10.05.rb' => { run_ignore: [32] },
     'code_4.10.06.rb' => { run_ignore: [1..9] },
     'code_4.11.02.rb' => { run_ignore: [24..34] },
