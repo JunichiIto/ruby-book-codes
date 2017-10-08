@@ -189,17 +189,24 @@ class SampleCodesTest < Minitest::Test
 
   def display_results
     return unless all_success?
-    @results.each do |basename, output|
-      if output.length > 0
+    @results.each do |basename, (success, out, err)|
+      if out.length > 0 || err.length > 0
         puts '-' * 20
         puts basename
-        puts output
+        unless err.empty?
+          puts "[STDERR]"
+          puts err
+        end
+        unless out.empty?
+          puts "[STDOUT]"
+          puts out
+        end
       end
     end
   end
 
   def all_success?
-    @results.all? { |_, (success, _)| success }
+    @results.all? { |_, (success, *_)| success }
   end
 
   def assert_syntax(basename, script)
