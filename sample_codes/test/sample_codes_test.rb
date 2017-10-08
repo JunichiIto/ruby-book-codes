@@ -98,7 +98,7 @@ class SampleCodesTest < Minitest::Test
     'code_8.04.03.rb' => { syntax_ignore: [25], run_ignore: [1, 11, 22..23] },
     'code_8.05.09.rb' => { run_ignore: [10] },
     'code_8.06.01.rb' => { run_ignore: [19..22] },
-    'code_8.06.02.rb' => { syntax_ignore: [3..6] },
+    'code_8.06.02.rb' => { syntax_ignore: [3..6], run_ignore: :all },
     'code_8.07.02.rb' => { run_ignore: [34] },
     'code_8.09.01.rb' => { run_ignore: [40] },
     'code_8.09.05.rb' => { run_ignore: [13, 36, 41] },
@@ -133,6 +133,7 @@ class SampleCodesTest < Minitest::Test
     'code_11.03.08.rb' => { syntax_ignore: [2] },
     'code_11.04.03.rb' => { run_ignore: :all },
     'code_11.04.04.rb' => { syntax_ignore: [4..8], run_ignore: :all },
+    'code_11.05.05.rb' => { run_ignore: :all },
 
     'code_12.03.00.rb' => { run_ignore: [10..17, 24] },
     'code_12.04.01.rb' => { run_ignore: :all },
