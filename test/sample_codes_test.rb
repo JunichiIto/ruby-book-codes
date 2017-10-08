@@ -61,23 +61,59 @@ class SampleCodesTest < Minitest::Test
     'code_A.02.rb' => { syntax_ignore: [5] },
   }
 
+  def setup
+    @results = {}
+  end
+
   def teardown
+    display_results
     delete_files = ['./sample.txt']
     delete_files.each do |file|
       FileUtils.rm(file) if File.exists?(file)
     end
   end
 
+  def test_sample_codes
+    files = Dir.glob("./sample_codes/**/*.rb")
+
+    files.each do |file|
+      pathname = Pathname.new(file)
+      basename = pathname.basename.to_s
+      @results[basename] = nil
+      File.open(file, 'r+:utf-8') do |f|
+        script = f.read
+        assert_syntax(basename, script)
+      end
+    end
+  end
+
+  private
+
+  def display_results
+    return unless all_success?
+    @results.each do |basename, output|
+      if output.length > 0
+        puts '-' * 20
+        puts basename
+        puts output
+      end
+    end
+  end
+
+  def all_success?
+    @results.all? { |_, (success, _)| success }
+  end
+
   def assert_syntax(basename, script)
     script_to_run = script
     if ranges = CONFIG.dig(basename, :syntax_ignore)
       assert_raises(SyntaxError) do
-        RubyVM::InstructionSequence.compile(script_to_run)
+        silent_compile(basename, script_to_run)
       end
       script_to_run = comment_out(ranges, script)
-      RubyVM::InstructionSequence.compile(script_to_run)
+      silent_compile(basename, script_to_run)
     else
-      RubyVM::InstructionSequence.compile(script_to_run)
+      silent_compile(basename, script_to_run)
     end
     assert_runnable(basename, script_to_run)
   end
@@ -88,8 +124,34 @@ class SampleCodesTest < Minitest::Test
       return if ranges == :all
       script_to_run = comment_out(ranges, script_to_run)
     end
-    result = RubyVM::InstructionSequence.compile(script_to_run).eval
-    puts "result:\n#{result.inspect}"
+    silent_run(basename) do
+      RubyVM::InstructionSequence.compile(script_to_run).eval
+    end
+  end
+
+  def silent_compile(basename, script)
+    silent_run(basename) do
+      RubyVM::InstructionSequence.compile(script)
+    end
+  end
+
+  def silent_run(basename)
+    io = StringIO.new
+    original_stdout = $stdout
+    success = true
+    begin
+      $stdout = io
+      yield
+    rescue
+      success = false
+      raise
+    ensure
+      $stdout = original_stdout
+      @results[basename] = [success, io.string]
+      unless success
+        puts "ERROR: #{basename}"
+      end
+    end
   end
 
   def comment_out(ranges, script)
@@ -105,20 +167,6 @@ class SampleCodesTest < Minitest::Test
       obj.include?(row)
     when Integer
       obj == row
-    end
-  end
-
-  def test_sample_codes
-    files = Dir.glob("./sample_codes/**/*.rb")
-
-    files.each do |file|
-      File.open(file, 'r+:utf-8') do |f|
-        pathname = Pathname.new(f.path)
-        basename = pathname.basename.to_s
-        print ',' + basename
-        script = f.read
-        assert_syntax(basename, script)
-      end
     end
   end
 end
