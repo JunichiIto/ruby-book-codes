@@ -1,7 +1,3 @@
-ハッシュ[キー] = 値
-
-# ----------------------------------------
-
 currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
 
 # イタリアの通貨を追加する
@@ -17,10 +13,6 @@ currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
 currencies['japan'] = '円'
 
 currencies #=> {"japan"=>"円", "us"=>"dollar", "india"=>"rupee"}
-
-# ----------------------------------------
-
-ハッシュ[キー]
 
 # ----------------------------------------
 
