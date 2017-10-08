@@ -2,6 +2,8 @@ require 'pathname'
 require 'minitest/autorun'
 
 class SampleCodesTest < Minitest::Test
+  CUSTOM_CONSTANTS = %i(UNITS DEFAULT_PRICE SOME_NAMES CURRENCIES COUNTRIES User Product DVD Loggable Second Clock)
+
   CONFIG = {
     'code_1.06.01.rb' => { run_ignore: [6] },
 
@@ -87,9 +89,21 @@ class SampleCodesTest < Minitest::Test
     'code_7.10.09.rb' => { run_ignore: [55, 73] },
     'column_7.04.rb' => { run_ignore: :all },
 
+    'code_8.01.01.rb' => { run_ignore: [15..27] },
     'code_8.02.02.rb' => { syntax_ignore: [11, 14..15] },
-    'code_8.04.03.rb' => { syntax_ignore: [25] },
+    'code_8.03.01.rb' => { run_ignore: [83, 103] },
+    'code_8.04.00.rb' => { run_ignore: :all },
+    'code_8.04.02.rb' => { run_ignore: [2] },
+    'code_8.04.03.rb' => { syntax_ignore: [25], run_ignore: [1, 11, 22..23] },
+    'code_8.05.09.rb' => { run_ignore: [10] },
+    'code_8.06.01.rb' => { run_ignore: [19..22] },
     'code_8.06.02.rb' => { syntax_ignore: [3..6] },
+    'code_8.07.02.rb' => { run_ignore: [34] },
+    'code_8.09.01.rb' => { run_ignore: [40] },
+    'code_8.09.05.rb' => { run_ignore: [13, 36, 41] },
+    'column_8.02.rb' => { run_ignore: [35] },
+    'column_8.03.rb' => { run_ignore: [19] },
+    'column_8.05.rb' => { run_ignore: [31, 34] },
 
     'code_11.03.08.rb' => { syntax_ignore: [2] },
     'code_11.04.04.rb' => { syntax_ignore: [4..8] },
@@ -126,9 +140,8 @@ class SampleCodesTest < Minitest::Test
 
   private
 
-  TARGET_CONSTANTS = %i(User Product DVD UNITS DEFAULT_PRICE)
   def undef_constants
-    TARGET_CONSTANTS.each do |const|
+    CUSTOM_CONSTANTS.each do |const|
       if Object.constants.include?(const)
         Object.send(:remove_const, const)
       end
@@ -209,7 +222,9 @@ class SampleCodesTest < Minitest::Test
     ensure
       $stdout = original_stdout
       $stderr = original_stderr
-      @results[basename] = [success, io_out.string, io_err.string]
+      err = io_err.string
+      # puts err unless err.empty?
+      @results[basename] = [success, io_out.string, err]
       unless success
         puts "ERROR: #{basename}"
       end
