@@ -194,18 +194,22 @@ class SampleCodesTest < Minitest::Test
   end
 
   def silent_run(basename)
-    io = StringIO.new
+    io_out = StringIO.new
+    io_err = StringIO.new
     original_stdout = $stdout
+    original_stderr = $stderr
     success = true
     begin
-      $stdout = io
+      $stdout = io_out
+      $stderr = io_err
       yield
     rescue StandardError, LoadError
       success = false
       raise
     ensure
       $stdout = original_stdout
-      @results[basename] = [success, io.string]
+      $stderr = original_stderr
+      @results[basename] = [success, io_out.string, io_err.string]
       unless success
         puts "ERROR: #{basename}"
       end
