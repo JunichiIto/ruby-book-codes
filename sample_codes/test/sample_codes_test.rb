@@ -162,7 +162,7 @@ class SampleCodesTest < Minitest::Test
   end
 
   def test_sample_codes
-    files = Dir.glob("./sample_codes/**/*.rb")
+    files = Dir.glob("./chapter_*/*.rb") + Dir.glob("./furoku/*.rb")
 
     files.each do |file|
       pathname = Pathname.new(file)
