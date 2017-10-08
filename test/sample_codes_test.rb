@@ -4,6 +4,7 @@ require 'minitest/autorun'
 class SampleCodesTest < Minitest::Test
   CONFIG = {
     'code_1.06.01.rb' => { run_ignore: [6] },
+
     'code_2.01.02.rb' => { run_ignore: :all },
     'code_2.02.08.rb' => { syntax_ignore: [29], run_ignore: [7] },
     'code_2.05.01.rb' => { run_ignore: [16..31] },
@@ -18,6 +19,7 @@ class SampleCodesTest < Minitest::Test
     'code_2.12.08.rb' => { run_ignore: :all },
     'code_2.12.09.rb' => { run_ignore: :all },
     'column_2.02.rb' => { run_ignore: [4, 18] },
+
     'code_3.02.02.rb' => { run_ignore: :all },
     'code_3.02.04.rb' => { run_ignore: :all },
     'code_3.02.05.rb' => { run_ignore: :all },
@@ -25,6 +27,7 @@ class SampleCodesTest < Minitest::Test
     'code_3.03.02.rb' => { syntax_ignore: [34], run_ignore: [32] },
     'column_3.01.rb' => { run_ignore: :all },
     'column_3.02.rb' => { run_ignore: :all },
+
     'code_4.01.02.rb' => { run_ignore: :all },
     'code_4.03.04.rb' => { run_ignore: [42] },
     'code_4.05.00.rb' => { run_ignore: [32, 38] },
@@ -36,6 +39,7 @@ class SampleCodesTest < Minitest::Test
     'code_4.10.06.rb' => { run_ignore: [1..9] },
     'code_4.11.02.rb' => { run_ignore: [24..34] },
     'code_4.11.03.rb' => { run_ignore: [42..45] },
+
     'code_5.01.02.rb' => { run_ignore: :all },
     'code_5.03.01.rb' => { run_ignore: [29] },
     'code_5.04.03.rb' => { run_ignore: [36..37, 57, 70] },
@@ -50,19 +54,52 @@ class SampleCodesTest < Minitest::Test
     'code_5.06.07.rb' => { run_ignore: [12] },
     'code_5.07.01.rb' => { syntax_ignore: [13..16] },
     'code_5.07.03.rb' => { run_ignore: [5, 39] },
-    'code_7.04.02.rb' => { syntax_ignore: [34] },
+
+    'code_6.01.02.rb' => { run_ignore: [9] },
+    'code_6.04.00.rb' => { run_ignore: [9] },
+    'code_6.04.01.rb' => { run_ignore: [2, 20] },
+    'code_6.04.02.rb' => { run_ignore: :all },
+
+    'code_7.01.01.rb' => { run_ignore: :all },
+    'code_7.02.01.rb' => { run_ignore: [82, 87, 90] },
+    'code_7.02.02.rb' => { depends_on: ['code_7.02.01.rb'] },
+    'code_7.03.01.rb' => { run_ignore: [1, 16, 25] },
+    'code_7.03.03.rb' => { run_ignore: [31..42] },
+    'code_7.03.05.rb' => { run_ignore: [40..41] },
+    'code_7.04.00.rb' => { run_ignore: :all },
+    'code_7.04.01.rb' => { run_ignore: [2] },
+    'code_7.04.02.rb' => { syntax_ignore: [34], run_ignore: [31..32] },
     'code_7.04.04.rb' => { syntax_ignore: [25..26] },
-    'code_7.08.00.rb' => { syntax_ignore: [23] },
+    'code_7.05.02.rb' => { run_ignore: [34, 37] },
+    'code_7.05.03.rb' => { run_ignore: [27..30] },
+    'code_7.06.03.rb' => { depends_on: ['code_7.06.02.rb'], run_ignore: [27..30] },
+    'code_7.06.05.rb' => { run_ignore: [67] },
+    'code_7.07.02.rb' => { run_ignore: [11, 28] },
+    'code_7.07.04.rb' => { run_ignore: [24, 35] },
+    'code_7.07.06.rb' => { run_ignore: [21..22] },
+    'code_7.07.07.rb' => { run_ignore: [27, 54] },
+    'code_7.08.00.rb' => { syntax_ignore: [23], run_ignore: [16] },
+    'code_7.08.01.rb' => { run_ignore: [21, 25..30] },
+    'code_7.08.02.rb' => { run_ignore: [50, 70] },
+    'code_7.10.02.rb' => { run_ignore: [7] },
+    'code_7.10.06.rb' => { run_ignore: [35..40] },
+    'code_7.10.07.rb' => { run_ignore: [11, 15..24] },
+    'code_7.10.09.rb' => { run_ignore: [55, 73] },
+    'column_7.04.rb' => { run_ignore: :all },
+
     'code_8.02.02.rb' => { syntax_ignore: [11, 14..15] },
     'code_8.04.03.rb' => { syntax_ignore: [25] },
     'code_8.06.02.rb' => { syntax_ignore: [3..6] },
+
     'code_11.03.08.rb' => { syntax_ignore: [2] },
     'code_11.04.04.rb' => { syntax_ignore: [4..8] },
+
     'code_A.02.rb' => { syntax_ignore: [5] },
   }
 
   def setup
     @results = {}
+    @run_scripts = {}
   end
 
   def teardown
@@ -88,6 +125,21 @@ class SampleCodesTest < Minitest::Test
   end
 
   private
+
+  TARGET_CONSTANTS = %i(User Product DVD UNITS DEFAULT_PRICE)
+  def undef_constants
+    TARGET_CONSTANTS.each do |const|
+      if Object.constants.include?(const)
+        Object.send(:remove_const, const)
+      end
+    end
+  end
+
+  def undef_monkey_patches
+    if String.new.respond_to?(:shuffle)
+      String.class_eval { undef_method :shuffle }
+    end
+  end
 
   def display_results
     return unless all_success?
@@ -124,9 +176,15 @@ class SampleCodesTest < Minitest::Test
       return if ranges == :all
       script_to_run = comment_out(ranges, script_to_run)
     end
+    if depending_files = CONFIG.dig(basename, :depends_on)
+      script_to_run = [*@run_scripts.values_at(*depending_files), script_to_run].join("\n")
+    end
+    @run_scripts[basename] = script_to_run
     silent_run(basename) do
       RubyVM::InstructionSequence.compile(script_to_run).eval
     end
+    undef_constants
+    undef_monkey_patches
   end
 
   def silent_compile(basename, script)
@@ -142,7 +200,7 @@ class SampleCodesTest < Minitest::Test
     begin
       $stdout = io
       yield
-    rescue
+    rescue StandardError, LoadError
       success = false
       raise
     ensure
