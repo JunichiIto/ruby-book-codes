@@ -119,10 +119,29 @@ class SampleCodesTest < Minitest::Test
     'code_9.06.09.rb' => { run_ignore: [19] },
     'column_9.02.rb' => { run_ignore: [11] },
 
-    'code_11.03.08.rb' => { syntax_ignore: [2] },
-    'code_11.04.04.rb' => { syntax_ignore: [4..8] },
+    'code_10.01.01.rb' => { run_ignore: :all },
+    'code_10.02.01.rb' => { run_ignore: [58] },
+    'code_10.02.02.rb' => { run_ignore: [95..98] },
+    'code_10.03.02.rb' => { run_ignore: [47] },
+    'code_10.03.04.rb' => { run_ignore: [57..58] },
+    'code_10.04.00.rb' => { run_ignore: [1..15] },
+    'code_10.04.03.rb' => { run_ignore: [2, 14..15] },
+    'code_10.05.04.rb' => { run_ignore: [30] },
 
-    'code_A.02.rb' => { syntax_ignore: [5] },
+    'code_11.03.06.rb' => { run_ignore: [11] },
+    'code_11.03.08.rb' => { syntax_ignore: [2] },
+    'code_11.04.03.rb' => { run_ignore: :all },
+    'code_11.04.04.rb' => { syntax_ignore: [4..8], run_ignore: :all },
+
+    'code_12.03.00.rb' => { run_ignore: [10..17, 24] },
+    'code_12.04.01.rb' => { run_ignore: :all },
+    'code_12.07.01.rb' => { run_ignore: :all },
+    'code_12.08.02.rb' => { run_ignore: :all },
+    'column_12.01.rb' => { run_ignore: [4] },
+    'column_12.02.rb' => { run_ignore: :all },
+
+    'code_A.02.rb' => { syntax_ignore: [5], run_ignore: :all },
+    'code_A.08.rb' => { run_ignore: :all },
   }
 
   def setup
