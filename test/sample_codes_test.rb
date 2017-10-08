@@ -138,6 +138,7 @@ class SampleCodesTest < Minitest::Test
     'code_12.04.01.rb' => { run_ignore: :all },
     'code_12.06.00.rb' => { run_ignore: [10..22] },
     'code_12.07.01.rb' => { run_ignore: :all },
+    'code_12.08.01.rb' => { run_ignore: :all },
     'code_12.08.02.rb' => { run_ignore: :all },
     'code_12.08.03.rb' => { run_ignore: :all },
     'column_12.01.rb' => { run_ignore: [4] },
