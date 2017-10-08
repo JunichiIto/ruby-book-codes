@@ -213,7 +213,7 @@ class SampleCodesTest < Minitest::Test
     script_to_run = script
     if ranges = CONFIG.dig(basename, :syntax_ignore)
       assert_raises(SyntaxError) do
-        silent_compile(basename, script_to_run)
+        RubyVM::InstructionSequence.compile(script)
       end
       script_to_run = comment_out(ranges, script)
       silent_compile(basename, script_to_run)
@@ -256,7 +256,7 @@ class SampleCodesTest < Minitest::Test
       $stdout = io_out
       $stderr = io_err
       yield
-    rescue StandardError, LoadError
+    rescue StandardError, LoadError, SyntaxError
       success = false
       raise
     ensure
