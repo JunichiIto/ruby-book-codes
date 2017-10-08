@@ -1,3 +1,5 @@
+# サンプルコードの構文チェックおよび実行チェックを行うRakefileです。
+
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|

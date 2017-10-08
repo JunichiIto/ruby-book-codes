@@ -1,3 +1,5 @@
+# サンプルコードの構文チェックおよび実行チェックを行うテストコードです。
+
 require 'pathname'
 require 'minitest/autorun'
 
