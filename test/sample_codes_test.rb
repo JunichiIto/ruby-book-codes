@@ -105,6 +105,20 @@ class SampleCodesTest < Minitest::Test
     'column_8.03.rb' => { run_ignore: [19] },
     'column_8.05.rb' => { run_ignore: [31, 34] },
 
+    'code_9.02.01.rb' => { run_ignore: [6, 16] },
+    'code_9.02.03.rb' => { run_ignore: [45] },
+    'code_9.02.05.rb' => { run_ignore: [12] },
+    'code_9.03.00.rb' => { run_ignore: [16, 34, 52, 70, 75..76] },
+    'code_9.04.02.rb' => { run_ignore: :all },
+    'code_9.04.05.rb' => { run_ignore: [19, 53] },
+    'code_9.05.03.rb' => { run_ignore: :all },
+    'code_9.05.04.rb' => { run_ignore: :all },
+    'code_9.05.05.rb' => { run_ignore: :all },
+    'code_9.06.02.rb' => { run_ignore: [11] },
+    'code_9.06.08.rb' => { run_ignore: [18] },
+    'code_9.06.09.rb' => { run_ignore: [19] },
+    'column_9.02.rb' => { run_ignore: [11] },
+
     'code_11.03.08.rb' => { syntax_ignore: [2] },
     'code_11.04.04.rb' => { syntax_ignore: [4..8] },
 
@@ -118,7 +132,7 @@ class SampleCodesTest < Minitest::Test
 
   def teardown
     display_results
-    delete_files = ['./sample.txt']
+    delete_files = ['./sample.txt', './some.txt']
     delete_files.each do |file|
       FileUtils.rm(file) if File.exists?(file)
     end
