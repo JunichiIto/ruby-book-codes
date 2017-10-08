@@ -24,15 +24,23 @@ class SampleCodesTest < Minitest::Test
     'code_A.02.rb' => { syntax_ignore: [5] },
   }
 
-  def assert_syntax(pathname, script)
-    if ranges = CONFIG.dig(pathname.basename.to_s, :syntax_ignore)
+  def assert_syntax(basename, script)
+    script_to_run = script
+    if ranges = CONFIG.dig(basename, :syntax_ignore)
       assert_raises(SyntaxError) do
-        RubyVM::InstructionSequence.compile(script)
+        RubyVM::InstructionSequence.compile(script_to_run)
       end
-      RubyVM::InstructionSequence.compile(comment_out(ranges, script))
+      script_to_run = comment_out(ranges, script)
+      RubyVM::InstructionSequence.compile(script_to_run)
     else
-      RubyVM::InstructionSequence.compile(script)
+      RubyVM::InstructionSequence.compile(script_to_run)
     end
+    # assert_runnable(basename, script_to_run)
+  end
+
+  def assert_runnable(basename, script)
+    result = RubyVM::InstructionSequence.compile(script).eval
+    puts "result:\n#{result.inspect}"
   end
 
   def comment_out(ranges, script)
@@ -57,9 +65,10 @@ class SampleCodesTest < Minitest::Test
     files.each do |file|
       File.open(file, 'r+:utf-8') do |f|
         pathname = Pathname.new(f.path)
-        print ',' + pathname.basename.to_s
+        basename = pathname.basename.to_s
+        print ',' + basename
         script = f.read
-        assert_syntax(pathname, script)
+        assert_syntax(basename, script)
       end
     end
   end
