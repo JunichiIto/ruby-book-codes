@@ -1,7 +1,7 @@
 require 'yaml'
 
 # YAML形式のテキストデータを用意する
-yaml = <<-TEXT
+yaml = <<TEXT
 alice:
   name: 'Alice'
   email: 'alice@example.com'
