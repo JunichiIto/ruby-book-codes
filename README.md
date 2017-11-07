@@ -1,13 +1,15 @@
 # ruby-book-codes
 
-Sample codes for "プロを目指す人のためのRuby入門" book.
+Sample codes for "[プロを目指す人のためのRuby入門](http://gihyo.jp/book/2017/978-4-7741-9397-7)" book.
 
-書籍「プロを目指す人のためのRuby入門」のサンプルコードです。
+書籍「[プロを目指す人のためのRuby入門](http://gihyo.jp/book/2017/978-4-7741-9397-7)」のサンプルコードです。
+
+<img src="https://ruby-book.jnito.com/images/ruby-book/book-cover.jpg" width="250" height="315">
 
 ## ディレクトリ構成
 
-- `ruby-book` : 例題の解答コード（各解答における最終形）を格納しています。
-- `sample-codes` : 本文中のサンプルコードを格納しています。
+- [ruby-book](https://github.com/JunichiIto/ruby-book-codes/tree/master/ruby-book) : 例題の解答コード（各解答における最終形）を格納しています。
+- [sample-codes](https://github.com/JunichiIto/ruby-book-codes/tree/master/sample-codes) : 本文中のサンプルコードを格納しています。
 
 ## 注意事項
 
