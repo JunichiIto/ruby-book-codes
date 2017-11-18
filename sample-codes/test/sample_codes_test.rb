@@ -66,9 +66,9 @@ class SampleCodesTest < Minitest::Test
     'code_6.04.02.rb' => { run_ignore: :all },
 
     'code_7.01.01.rb' => { run_ignore: :all },
-    'code_7.02.01.rb' => { run_ignore: [82, 87, 90] },
+    'code_7.02.01.rb' => { run_ignore: [82, 88, 92] },
     'code_7.02.02.rb' => { depends_on: ['code_7.02.01.rb'] },
-    'code_7.03.01.rb' => { run_ignore: [1, 16, 25] },
+    'code_7.03.01.rb' => { run_ignore: [1, 16, 26] },
     'code_7.03.03.rb' => { run_ignore: [31..42] },
     'code_7.03.05.rb' => { run_ignore: [40..41] },
     'code_7.04.00.rb' => { run_ignore: :all },

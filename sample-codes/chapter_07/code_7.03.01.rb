@@ -13,7 +13,8 @@ User.new
 # ----------------------------------------
 
 user = User.new
-user.initialize #=> NoMethodError: private method `initialize' called for #<User:0x007fb18a321ca0>
+user.initialize
+#=> NoMethodError: private method `initialize' called for #<User:0x007fb18a321ca0>
 
 # ----------------------------------------
 

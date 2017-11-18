@@ -79,15 +79,18 @@ end
 
 users[0].first_name #=> 'Alice'
 
-users[0].first_mame #=> NoMethodError: undefined method `first_mame' for #<User:0x007ff2b98678c0>
+users[0].first_mame
+#=> NoMethodError: undefined method `first_mame' for #<User:0x007ff2b98678c0>
 
 # ----------------------------------------
 
 # 勝手に属性を追加できない
-users[0].country = 'japan'    #=> NoMethodError: undefined method `country=' for #<User:0x007ff2b98678c0>
+users[0].country = 'japan'
+#=> NoMethodError: undefined method `country=' for #<User:0x007ff2b98678c0>
 
 # 勝手にfirst_nameを変更できない
-users[0].first_name = 'Carol' #=> NoMethodError: undefined method `first_name=' for #<User:0x007ff2b98678c0>
+users[0].first_name = 'Carol'
+#=> NoMethodError: undefined method `first_name=' for #<User:0x007ff2b98678c0>
 
 # ----------------------------------------
 

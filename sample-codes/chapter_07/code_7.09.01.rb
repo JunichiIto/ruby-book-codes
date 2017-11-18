@@ -19,7 +19,6 @@ Product.name #=> "Product"
 
 product = Product.new('A great movie')
 product.name #=> "A great movie"
-
 Product.name #=> "Product"
 
 # ----------------------------------------
