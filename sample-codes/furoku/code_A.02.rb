@@ -23,13 +23,14 @@ end
 
 # ----------------------------------------
 
-# Rails環境の場合
+# Railsであれば、文字列に対してunderscoreメソッドが呼び出せる
 'HelloWorld'.underscore #=> "hello_world"
 
 # ----------------------------------------
 
-# 素のRubyの場合
-'HelloWorld'.underscore #=> NoMethodError: undefined method `underscore' for "HelloWorld":String
+# 素のRubyではunderscoreメソッドは定義されていない
+'HelloWorld'.underscore
+#=> NoMethodError: undefined method `underscore' for "HelloWorld":String
 
 # ----------------------------------------
 
