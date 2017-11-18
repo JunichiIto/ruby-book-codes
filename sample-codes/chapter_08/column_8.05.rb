@@ -29,6 +29,5 @@ s::upcase #=> "ABC"
 
 # Sample.UserだとUserがメソッドと見なされる
 Sample.User::NAME #=> NoMethodError: undefined method `User' for Sample:Module
-
 # User.NAMEだとNAMEがメソッドと見なされる
 Sample::User.NAME #=> NoMethodError: undefined method `NAME' for Sample::User:Class

@@ -106,7 +106,7 @@ class SampleCodesTest < Minitest::Test
     'code_8.09.05.rb' => { run_ignore: [13, 36, 41] },
     'column_8.02.rb' => { run_ignore: [35] },
     'column_8.03.rb' => { run_ignore: [19] },
-    'column_8.05.rb' => { run_ignore: [31, 34] },
+    'column_8.05.rb' => { run_ignore: [31, 33] },
 
     'code_9.02.01.rb' => { run_ignore: [6, 16] },
     'code_9.02.03.rb' => { run_ignore: [45] },

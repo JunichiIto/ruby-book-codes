@@ -100,4 +100,5 @@ class Product
 end
 
 # logメソッドはprivateメソッドなので外部から呼び出せない
-product.log 'public?' #=> NoMethodError: private method `log' called for #<Product:0x007fd3ca855bb0>
+product.log 'public?'
+#=> NoMethodError: private method `log' called for #<Product:0x007fd3ca855bb0>

@@ -11,6 +11,8 @@ module AwesomeApi
 end
 
 # こちらではAwesomeApiモジュールが名前空間として使われる（用途その２）
-class AwesomeApi::Engine
-  # クラスの定義
+module AwesomeApi
+  class Engine
+    # クラスの定義
+  end
 end
