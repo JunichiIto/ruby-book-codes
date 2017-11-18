@@ -100,6 +100,7 @@ puts a
 #   Ruby
 
 # ヒアドキュメントで作成した文字列に対して、直接`upcase`メソッドを呼び出す
+# （upcaseは文字列をすべて大文字にするメソッド）
 b = <<TEXT.upcase
 Hello,
 Good-bye.

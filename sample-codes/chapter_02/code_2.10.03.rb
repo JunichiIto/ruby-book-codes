@@ -27,11 +27,13 @@ end
 status = 'error'
 
 # unlessの結果を変数に代入する
-message = unless status == 'ok'
-            '何か異常があります'
-          else
-            '正常です'
-          end
+message =
+  unless status == 'ok'
+    '何か異常があります'
+  else
+    '正常です'
+  end
+
 message #=> '何か異常があります'
 
 # unlessを修飾子として使う

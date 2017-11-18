@@ -44,6 +44,7 @@ end
 # ----------------------------------------
 
 country = 'italy'
+
 message =
   case country
   when 'japan'
@@ -55,11 +56,13 @@ message =
   else
     '???'
   end
+
 message #=> "ciao"
 
 # ----------------------------------------
 
 country = 'italy'
+
 case country
 when 'japan' then 'こんにちは'
 when 'us' then 'Hello'
