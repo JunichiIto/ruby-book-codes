@@ -3,7 +3,7 @@ require 'json'
 
 user = { name: 'Alice', email: 'alice@example.com', age: 20 }
 
-# RubyのハッシュをJSON形式の文字列に変換する
+# ハッシュをJSON形式の文字列に変換する（Rubyのハッシュに似ているがこれはJSON形式）
 user_json = user.to_json
 puts user_json #=> {"name":"Alice","email":"alice@example.com","age":20}
 
