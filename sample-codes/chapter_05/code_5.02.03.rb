@@ -27,5 +27,9 @@ currencies                 #=> {"us"=>"dollar", "india"=>"rupee"}
 # ----------------------------------------
 
 currencies = { 'japan' => 'yen', 'us' => 'dollar', 'india' => 'rupee' }
-currencies.delete('italy')                               #=> nil
+
+# 削除しようとしたキーが見つからないときはnilが返る
+currencies.delete('italy') #=> nil
+
+# ブロックを渡すとキーが見つからないときの戻り値を作成できる
 currencies.delete('italy') { |key| "Not found: #{key}" } #=> "Not found: italy"
