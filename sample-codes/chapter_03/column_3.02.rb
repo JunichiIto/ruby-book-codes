@@ -7,7 +7,7 @@ RSpec.describe 'Fizz Buzz' do
     expect(fizz_buzz(1)).to eq '1'
     expect(fizz_buzz(2)).to eq '2'
     expect(fizz_buzz(3)).to eq 'Fizz'
-    # 以下省略
+    # 省略
   end
 end
 
@@ -21,6 +21,6 @@ class FizzBuzzTest < Test::Unit::TestCase
     assert_equal '1', fizz_buzz(1)
     assert_equal '2', fizz_buzz(2)
     assert_equal 'Fizz', fizz_buzz(3)
-    # 以下省略
+    # 省略
   end
 end
