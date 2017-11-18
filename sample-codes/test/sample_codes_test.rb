@@ -123,13 +123,13 @@ class SampleCodesTest < Minitest::Test
     'column_9.02.rb' => { run_ignore: [11] },
 
     'code_10.01.01.rb' => { run_ignore: :all },
-    'code_10.02.01.rb' => { run_ignore: [58] },
+    'code_10.02.01.rb' => { run_ignore: [59] },
     'code_10.02.02.rb' => { run_ignore: [95..98] },
     'code_10.03.02.rb' => { run_ignore: [47] },
-    'code_10.03.04.rb' => { run_ignore: [57..58] },
+    'code_10.03.04.rb' => { run_ignore: [57..59] },
     'code_10.04.00.rb' => { run_ignore: [1..15] },
     'code_10.04.03.rb' => { run_ignore: [2, 14..15] },
-    'code_10.05.04.rb' => { run_ignore: [30] },
+    'code_10.05.04.rb' => { run_ignore: [34] },
 
     'code_11.03.06.rb' => { run_ignore: [11] },
     'code_11.03.08.rb' => { syntax_ignore: [2] },

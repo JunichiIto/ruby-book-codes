@@ -34,7 +34,7 @@ def greeting(&block)
   puts 'こんばんは'
 end
 
-# Procオブジェクトを作成し、それをgreetingメソッドに渡す
+# Procオブジェクトを作成し、それをブロックの代わりとしてgreetingメソッドに渡す
 repeat_proc = proc { |text| text * 2 }
 greeting(&repeat_proc)
 #=> おはよう

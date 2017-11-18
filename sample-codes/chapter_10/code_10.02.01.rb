@@ -55,6 +55,7 @@ end
 
 # ----------------------------------------
 
+# わざとブロックを付けずに呼び出す
 greeting
 #=> おはよう
 #   LocalJumpError: no block given (yield)
@@ -93,7 +94,7 @@ def greeting
 end
 
 greeting do |text|
-  # yieldで渡された文字列を2回繰り返す
+  # yieldで渡された文字列（"こんにちは"）を2回繰り返す
   text * 2
 end
 #=> おはよう

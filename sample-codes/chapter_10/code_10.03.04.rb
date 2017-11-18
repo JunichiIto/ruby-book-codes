@@ -54,5 +54,7 @@ add_proc.call(10, 20, 100) #=> 30
 # ラムダの場合
 add_lambda = ->(a, b) { a.to_i + b.to_i }
 # ラムダは個数について厳密なので、引数2個でなければエラーになる
-add_lambda.call(10)         #=> ArgumentError: wrong number of arguments (given 1, expected 2)
-add_lambda.call(10, 20, 30) #=> ArgumentError: wrong number of arguments (given 3, expected 2)
+add_lambda.call(10)
+#=> ArgumentError: wrong number of arguments (given 1, expected 2)
+add_lambda.call(10, 20, 30)
+#=> ArgumentError: wrong number of arguments (given 3, expected 2)

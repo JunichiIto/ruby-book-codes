@@ -6,7 +6,7 @@ def greeting(arrange_proc)
   puts 'こんばんは'
 end
 
-# Procオブジェクトを普通の引数としてgreetingメソッドに渡す
+# Procオブジェクトを普通の引数としてgreetingメソッドに渡す（&を付けない）
 repeat_proc = proc { |text| text * 2 }
 greeting(repeat_proc)
 #=> おはよう
