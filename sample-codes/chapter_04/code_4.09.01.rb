@@ -1,6 +1,11 @@
-fruits = ['apple', 'orange', 'melon']
-# ブロック引数のiには0、1、2・・・と要素の添え字が入る
-fruits.each_with_index { |fruit, i| puts "#{i}: #{fruit}" }
-#=> 0: apple
-#   1: orange
-#   2: melon
+sum = 0
+# 処理を5回繰り返す。nには0, 1, 2, 3, 4が入る
+5.times { |n| sum += n }
+sum #=> 10
+
+# ----------------------------------------
+
+sum = 0
+# sumに1を加算する処理を5回繰り返す
+5.times { sum += 1 }
+sum #=> 5

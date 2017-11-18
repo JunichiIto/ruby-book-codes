@@ -1,18 +1,17 @@
-# コラム：繰り返し処理とEnummerableモジュール
+# コラム ブロックのうしろに別のメソッドを続けて書く
 
-# 範囲オブジェクトに対してmapメソッドを呼びだす
-(1..4).map { |n| n * 10 } #=> [10, 20, 30, 40]
-
-# uptoメソッドの戻り値に対してselectメソッドを呼び出す
-1.upto(5).select { |n| n.odd? } #=> [1, 3, 5]
+names = ['田中', '鈴木', '佐藤']
+san_names = names.map { |name| "#{name}さん" } #=> ["田中さん", "鈴木さん", "佐藤さん"]
+san_names.join('と') #=> "田中さんと鈴木さんと佐藤さん"
 
 # ----------------------------------------
 
-[1, 2, 3].class                 #=> Array
-Array.include?(Enumerable)      #=> true
+names = ['田中', '鈴木', '佐藤']
+names.map { |name| "#{name}さん" }.join('と') #=> "田中さんと鈴木さんと佐藤さん"
 
-(1..3).class                    #=> Range
-Range.include?(Enumerable)      #=> true
+# ----------------------------------------
 
-1.upto(3).class                 #=> Enumerator
-Enumerator.include?(Enumerable) #=> true
+names = ['田中', '鈴木', '佐藤']
+names.map do |name|
+  "#{name}さん"
+end.join('と') #=> "田中さんと鈴木さんと佐藤さん"

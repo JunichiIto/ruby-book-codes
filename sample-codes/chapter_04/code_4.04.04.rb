@@ -16,6 +16,10 @@ sum = numbers.inject(0) { |result, n| result + n }
 
 # ----------------------------------------
 
+((((0 + 1) + 2) +3) + 4)
+
+# ----------------------------------------
+
 ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].inject('Sun') { |result, s| result + s }
 #=> "SunMonTueWedThuFriSat"
 

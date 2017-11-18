@@ -1,19 +1,9 @@
-fruits = ['apple', 'orange', 'melon']
-# mapとして処理しつつ、添え字も受け取る
-fruits.map.with_index { |fruit, i| "#{i}: #{fruit}" }
-#=> ["0: apple", "1: orange", "2: melon"]
+a = []
+10.upto(14) { |n| a << n }
+a #=> [10, 11, 12, 13, 14]
 
 # ----------------------------------------
 
-fruits = ['apple', 'orange', 'melon']
-# 名前に"a"を含み、なおかつ添え字が奇数である要素を削除する
-fruits.delete_if.with_index { |fruit, i| fruit.include?('a') && i.odd? }
-#=> ["apple", "melon"]
-
-# ----------------------------------------
-
-fruits = ['apple', 'orange', 'melon']
-# ブロック無しでメソッドを呼び出すとEnumeratorオブジェクトが返される
-fruits.each      #=> #<Enumerator: ["apple", "orange", "melon"]:each>
-fruits.map       #=> #<Enumerator: ["apple", "orange", "melon"]:map>
-fruits.delete_if #=> #<Enumerator: ["apple", "orange", "melon"]:delete_if>
+a = []
+14.downto(10) { |n| a << n }
+a #=> [14, 13, 12, 11, 10]

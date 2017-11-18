@@ -1,41 +1,40 @@
-numbers = [1, 2, 3, 4]
-sum = 0
-for n in numbers
-  sum += n
-end
-sum #=> 10
+foods = ['ピーマン', 'トマト', 'セロリ']
+foods.each do |food|
+  print "#{food}は好きですか？ => "
+  # sampleは配列からランダムに1要素を取得するメソッド
+  answer = ['はい', 'いいえ'].sample
+  puts answer
 
-# doを入れて1行で書くことも可能
-sum = 0
-for n in numbers do sum += n end
-sum #=> 10
+  # はいと答えなければもう一度聞き直す
+  redo unless answer == 'はい'
+end
+#=> ピーマンは好きですか？ => いいえ
+#   ピーマンは好きですか？ => いいえ
+#   ピーマンは好きですか？ => はい
+#   トマトは好きですか？ => はい
+#   セロリは好きですか？ => いいえ
+#   セロリは好きですか？ => はい
 
 # ----------------------------------------
 
-numbers = [1, 2, 3, 4]
-sum = 0
-numbers.each do |n|
-  sum += n
-end
-sum #=> 10
+foods = ['ピーマン', 'トマト', 'セロリ']
+count = 0
+foods.each do |food|
+  print "#{food}は好きですか？ => "
+  # わざと「いいえ」しか答えないようにする
+  answer = 'いいえ'
+  puts answer
 
-# ----------------------------------------
+  count += 1
+  # やり直しは2回までにする
+  redo if answer != 'はい' && count < 2
 
-numbers = [1, 2, 3, 4]
-sum = 0
-numbers.each do |n|
-  sum_value = n.even? ? n * 10 : n
-  sum += sum_value
+  # カウントをリセット
+  count = 0
 end
-# ブロック引数やブロック内で作成した変数はブロックの外では参照できない
-n         #=> NameError: undefined local variable or method `n' for main:Object
-sum_value #=> NameError: undefined local variable or method `sum_value' for main:Object
-
-sum = 0
-for n in numbers
-  sum_value = n.even? ? n * 10 : n
-  sum += sum_value
-end
-# for文の中で作成された変数はfor文の外でも参照できる
-n         #=> 4
-sum_value #=> 40
+#=> ピーマンは好きですか？ => いいえ
+#   ピーマンは好きですか？ => いいえ
+#   トマトは好きですか？ => いいえ
+#   トマトは好きですか？ => いいえ
+#   セロリは好きですか？ => いいえ
+#   セロリは好きですか？ => いいえ
