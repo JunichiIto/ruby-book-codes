@@ -43,21 +43,21 @@ regexp === '123 4567' #=> true
 
 # ----------------------------------------
 
-# バックスラッシュを特別扱いしないように'TEXT'を使う（第2章参照）
+# バックスラッシュを特別扱いしないように'TEXT'を使う（2.8.3項参照）
 pattern = <<'TEXT'
   \d{3} # 郵便番号の先頭3桁
   -     # 区切り文字のハイフン
   \d{4} # 郵便番号の末尾4桁
 TEXT
 regexp = Regexp.new(pattern, Regexp::EXTENDED)
-regexp === '123-4567' #=> true
+'123-4567' =~ regexp #=> 0
 
 # ----------------------------------------
 
 # iオプションとmオプションを同時に使う
-/Hello.Bye/im === "HELLO\nBYE" #=> true
+"HELLO\nBYE" =~ /Hello.Bye/im #=> 0
 
 # ----------------------------------------
 
 regexp = Regexp.new('Hello.Bye', Regexp::IGNORECASE | Regexp::MULTILINE)
-regexp === "HELLO\nBYE" #=> true
+"HELLO\nBYE" =~ regexp #=> 0
