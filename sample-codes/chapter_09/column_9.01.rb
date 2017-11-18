@@ -7,7 +7,7 @@ def some_method(n)
   rescue => e
     'error'
   ensure
-    # ensure節にreturnを書く（良くない例）
+    # ensure節にreturnを書く
     return 'ensure'
   end
 end

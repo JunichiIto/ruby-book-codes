@@ -11,7 +11,6 @@ rescue RegexpError => e
   retry
 end
 
-# 以下は変更なし
 matches = text.scan(regexp)
 if matches.size > 0
   puts "Matched: #{matches.join(', ')}"
