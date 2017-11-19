@@ -42,4 +42,4 @@ f1 = false
 t1 = true
 f1 = false
 t1 && f1    #=> false
-!(t1 && f2) #=> true
+!(t1 && f1) #=> true
