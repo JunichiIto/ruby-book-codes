@@ -160,7 +160,7 @@ class SampleCodesTest < Minitest::Test
     display_results
     delete_files = ['./sample.txt', './some.txt']
     delete_files.each do |file|
-      FileUtils.rm(file) if File.exists?(file)
+      FileUtils.rm(file) if File.exist?(file)
     end
   end
 
