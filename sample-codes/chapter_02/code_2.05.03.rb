@@ -1,14 +1,30 @@
 n = 11
 if n > 10
-  '10より大きい'
+  puts '10より大きい'
 else
-  '10以下'
+  puts '10以下'
 end
-#=> "10より大きい"
+#=> 10より大きい
 
 # ----------------------------------------
 
 country = 'italy'
+if country == 'japan'
+  puts 'こんにちは'
+elsif country == 'us'
+  puts 'Hello'
+elsif country == 'italy'
+  puts 'ciao'
+else
+  puts '???'
+end
+#=> ciao
+
+# ----------------------------------------
+
+country = 'italy'
+
+# putsを使わずif文の戻り値を直接確認する
 if country == 'japan'
   'こんにちは'
 elsif country == 'us'
@@ -23,6 +39,8 @@ end
 # ----------------------------------------
 
 country = 'italy'
+
+# if文の戻り値を変数に代入する
 greeting =
   if country == 'japan'
     'こんにちは'
@@ -33,6 +51,7 @@ greeting =
   else
     '???'
   end
+
 greeting #=> "ciao"
 
 # ----------------------------------------
