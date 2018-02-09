@@ -165,7 +165,9 @@ class SampleCodesTest < Minitest::Test
   end
 
   def test_sample_codes
-    files = Dir.glob("./chapter_*/*.rb") + Dir.glob("./furoku/*.rb")
+    chapter_files = File.expand_path('../../chapter_*/*.rb', __FILE__)
+    furoku_files = File.expand_path('../../furoku/*.rb', __FILE__)
+    files = Dir.glob(chapter_files) + Dir.glob(furoku_files)
 
     files.sort.each do |file|
       pathname = Pathname.new(file)
@@ -270,7 +272,6 @@ class SampleCodesTest < Minitest::Test
       $stdout = original_stdout
       $stderr = original_stderr
       err = io_err.string
-      # puts err unless err.empty?
       @results[basename] = [success, io_out.string, err]
       unless success
         puts "ERROR: #{basename}"
