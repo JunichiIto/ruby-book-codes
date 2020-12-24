@@ -73,4 +73,8 @@ buy_burger('fish', potato: false) #=> ArgumentError: missing keywords: drink
 
 # キーワード引数と一致するハッシュであれば、メソッドの引数として渡すことができる
 params = { drink: true, potato: false }
-buy_burger('fish', params)
+if RUBY_VERSION.to_i < 3
+  buy_burger('fish', params)
+else
+  buy_burger('fish', **params)
+end

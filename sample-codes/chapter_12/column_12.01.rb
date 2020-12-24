@@ -6,5 +6,10 @@ open 'http://example.com'
 
 # ただし、open-uriライブラリをrequireするとURLが開けるようになる
 require 'open-uri'
-open 'http://example.com'
-#=> #<StringIO:0x007fe8cc105d08 @base_uri=#<URI::HTTP http://...
+if RUBY_VERSION.to_i < 3
+  open 'http://example.com'
+  #=> #<StringIO:0x007fe8cc105d08 @base_uri=#<URI::HTTP http://...
+else
+  URI.open 'http://example.com'
+  #=> #<StringIO:0x007fe8cc105d08 @base_uri=#<URI::HTTP http://...
+end
