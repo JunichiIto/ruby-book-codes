@@ -45,7 +45,7 @@ fruits.each do |fruit|
   # 配列の数字をランダムに入れ替え、3が出たらbreakする
   numbers.shuffle.each do |n|
     puts "#{fruit}, #{n}"
-    # nunmbersのループは脱出するが、fruitsのループは継続する
+    # numbersのループは脱出するが、fruitsのループは継続する
     break if n == 3
   end
 end
