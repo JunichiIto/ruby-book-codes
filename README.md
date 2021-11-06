@@ -6,6 +6,10 @@ Sample codes for "[プロを目指す人のためのRuby入門](http://gihyo.jp/
 
 <img src="https://ruby-book.jnito.com/images/ruby-book/book-cover.jpg" width="250" height="315">
 
+改訂2版（2021年12月発売）のサンプルコードを参照する場合は以下のリポジトリにアクセスしてください。
+
+https://github.com/JunichiIto/ruby-book-codes-v2
+
 ## ディレクトリ構成
 
 - [ruby-book](https://github.com/JunichiIto/ruby-book-codes/tree/master/ruby-book) : 例題の解答コード（各解答における最終形）を格納しています。
