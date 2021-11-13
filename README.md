@@ -1,6 +1,6 @@
 # ruby-book-codes
 
-Sample codes for "[プロを目指す人のためのRuby入門](http://gihyo.jp/book/2017/978-4-7741-9397-7) 1st edition" book.
+Sample codes for "[プロを目指す人のためのRuby入門](http://gihyo.jp/book/2017/978-4-7741-9397-7)（第1版）" book.
 
 書籍「[プロを目指す人のためのRuby入門](http://gihyo.jp/book/2017/978-4-7741-9397-7)（第1版）」のサンプルコードです。
 
